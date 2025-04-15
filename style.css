@@ -1,0 +1,174 @@
+/* General body styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("kk.JPG");
+    color: white;
+    background-size: cover; /* Ensures one full image */
+    background-repeat: no-repeat; /* Prevents multiple copies */
+    background-position: center; /* Centers the image */
+}
+.content {
+    font-size: 35px; /* This sets a different font size for the content */
+    position: relative;
+    top: -50px;
+}
+
+/* Header styles */
+header {
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.75);
+    position: relative;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, -1); /* <- This value is invalid */
+    z-index: -1;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+    transition: .5s;
+}
+
+header:hover::after {
+    left: 100%;
+}
+
+/* Logo styling */
+.logo img {
+    width: 75px;
+    height: 75px;
+    border-radius: 10px;
+    margin-right: auto;
+    align-self: center;
+    padding: 40px 40px;
+    margin-left: 20px; /* Moves the logo slightly to the right */
+}
+
+/* Navigation styles */
+/* Navigation styles */
+nav {
+    text-align: center;
+    background: rgba(0, 0, 0, 0);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 30px 40px;
+    position: relative;
+    display: inline-block;
+}
+
+
+nav ul li a:hover {
+    color: cyan;
+    border-bottom: 2px solid cyan;
+    border-radius: 15px;
+}
+
+/* Cards section */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 50px;
+}
+
+.card {
+    background: white;
+    color: black;
+    width: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+    background: #00aaff;
+    padding: 30px;
+    font-size: 40px;
+    color: white;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.read-more {
+    background: #00aaff;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.read-more:hover {
+    background: #0077cc;
+}
+
+/* Mission section */
+.mission {
+    margin: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+.missionimg {
+    height: 400px;
+    width: 400px;
+    border-radius: 35px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    transition: box-shadow 0.3s ease;
+}
+
+.missionheading {
+    margin-left: 20px;
+    color: white;
+    font-size: 90px;
+    font-weight: 705;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    transition: text-shadow 0.3s ease;
+}

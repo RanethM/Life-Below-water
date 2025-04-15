@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    color:white;
+}
+
+body {
+    background-color: #7ecceb;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-image: url(images/Home/BGPEd.png);
+
+}
+
+.overlay{
+    position: fixed; /* Keeps the video in the background */
+    top: 0;
+    left: 0;
+    width: 100%; /* Covers the entire width */
+    height: 100%; /* Covers the entire height */
+    object-fit: cover; /* Ensures the video covers the screen without distortion */
+    z-index: -1; /* Keeps the video behind other elements */
+    
+    background-color: rgba(0, 0, 0,0.30);
+}
+
+
+.backToHome {
+    position: absolute;
+    top: 80px;
+    left: 40px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: rgb(33, 33, 42, 0.9);
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 0 30px rgba(129, 108, 108, 0.5);
+}
+
+img {
+    width: 360px;
+    margin-top: 50px;
+    margin-left: 650px;
+    border-radius: 50%;
+}
+
+.user {
+    width: 1000px;
+    height: 560px;
+    margin-left: 180px;
+    margin-top: -570px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.66); /* Dark color with transparency */
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Adds depth with a shadow */
+
+}
+
+.box {
+
+    width: 1200px;
+    height: 3100px;
+    border-radius: 30px;
+    margin-left: 100px;
+
+
+}
+
+.box h3 {
+    margin-left: 350px;
+    color: black;
+    font-size: 25px;
+}
+
+.pages {
+    width: 600px;
+    height: 620px;
+    margin-left: 300px;
+    margin-right: 100px;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(37, 32, 32, 0.874); /* Apply the updated color */
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+
+}
+
+.pages h3 {
+    margin-left: 10px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.pages p {
+    font-size: 17px;
+    margin-left: 10px;
+    color: white;
+    font-family: sans-serif;
+}
+
+.pages a {
+    margin-left: 10px;
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 8px 20px;
+    margin-top: 20px;
+    background-color: #ddeef5;
+    transition: all 0.4s ease-in-out;
+    
+}
+
+.pages a:hover {
+    background-color: #1287b5; /* Changes background color on hover */
+    color: white; /* Changes text color on hover */
+    transform: scale(1.1); /* Slightly enlarges the button on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adds a shadow effect */
+    cursor: pointer; /* Changes cursor to indicate interactivity */
+}
+
+
+.details {
+    padding-top: 100px;
+    margin-top: 150px;
+    margin-left: 50px;
+}
+
+h1 {
+    color: white;
+    font-size: 36px;
+
+}
+
+h2 {
+    color: #19b2e2;
+    font-size: 24px;
+
+}
+
+h3 {
+    color: rgb(253, 253, 253);
+    font-size: 18px;
+}
+
+
+
+.topic:hover {
+    color:  #19b2e2;; /* Changes text color on hover */
+    transform: scale(1.0); /* Slightly enlarges the text */
+    cursor: pointer; /* Changes cursor to indicate interactivity */
+}
+
+.fa {
+    padding: 10px;
+    font-size: 18px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    background-color: white;
+    color: black;
+}
+
+.fa-facebook {
+    background: black;
+    color: white;
+}
+
+.fa-twitter {
+    background: black;
+    color: white;
+}
+
+.fa-instagram {
+    background: black;
+    color: white;
+}
+
+.fa-linkedin {
+    background: black;
+    color: white;
+}
+
+
+.goToUp {
+    margin-left: 230px;
+    font-size: 20px;
+    
+}
+
+.goToUp a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px; /* Increases the font size for better visibility */
+    font-weight: bold; /* Makes the text stand out */
+    background-color: rgba(0, 0, 0, 0.758); /* Adds a subtle background for contrast */
+    padding: 10px 15px; /* Adds padding for better spacing around the text */
+    border-radius: 5px; /* Rounds the corners for a polished look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.goToUp a:hover {
+    color: #1287b5;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-decoration: underline;
+    transform: scale(1.1); /* Slightly enlarges the link on hover for emphasis */
+    transition: all 0.3s ease-in-out;
+}
+
+#backgroundVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Ensure it stays behind other elements */
+}
+
+aside {
+    width:300px;
+    flex: 1;
+    background:transparent;
+    padding: 15px;
+    border:none;
+    margin-right: 20px;
+    margin-left: 40px;
+    text-decoration: none;
+    color:white; /* Change this to your preferred color */
+    position:relative;
+    bottom:2920px;
+    transition: color 0.3s ease-in-out;
+    
+}
+aside a:hover {
+    color:#1287b5 ; 
+}
+
+aside a:visited { 
+    color:white; 
+}
+
+
+aside a{
+    text-decoration : none;
+}
+
+aside li{
+    padding-bottom: 4px;
+}
+
+.top-level-ul .student{
+    font-size: 20px;
+    font-weight: 500;
+    font-weight:600;
+    padding-top: 5px;
+}
+
+h3{
+    font-weight: 1300;
+    color: white;
+   
+}
+		footer {
+			position: relative;
+			width: 100%;
+			height: 400px; /* Adjust height as needed */
+			overflow: hidden;
+			margin-top: 100px; /* Push footer below content */
+			z-index: 2;
+		}
+
+footer video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+	filter: blur(10px);
+	
+}
+
+
+
+	.footer-content {
+        position: relative;
+		bottom: 50px;
+		left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        color: white;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        background: rgba(0, 0, 0,0); /* Semi-transparent background for readability */
+        padding: 30px ;
+		backdrop-filter: none; 
+    }
+
+    .footer-section {
+		font-family: 'Poppins';
+		font-style: normal;
+        margin: 10px;
+		font-weight: bold;
+		font-size: 25px;
+    }
+
+    .footer-section h3 {
+        margin-bottom: 10px;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-section ul li {
+        margin: 5px 0;
+    }
+
+    .footer-section ul li a {
+        color: white;
+        text-decoration: none;
+
+    }
+
+    .footer-section ul li a:hover {
+        text-decoration: underline;
+        color: cyan;
+        border-bottom: 2px solid cyan;
+        border-radius: 55px;
+        }
+		
+
+
+
+}
+.footer-section {
+    flex: 1;  /* Allow sections to take equal width */
+    min-width: 250px;  /* Ensure sections don't get too narrow on small screens */
+    margin-top: 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 5px;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+    color: cyan;
+}
+
+.footer-section:nth-child(3) h3 {
+    margin-left: -50px /* Adjust this value to move the heading to the left */
+}
+
+.footer-section .elements a {
+    color: white;
+    text-decoration: none; /* Remove default underline */
+    font-size: 16px;
+}
+
+.footer-section .elements a:hover {
+    text-decoration: underline;
+    color: cyan;
+    border-bottom: 2px solid cyan;
+    border-radius: 55px;
+}
+
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.social-icons li {
+    display: inline;
+}
+
+.social-icons li a {
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.social-icons li a:hover {
+    color: cyan;
+}

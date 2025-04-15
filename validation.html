@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	
+    <title>Validator Page Student - Provide Your Student Name</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('validation.png'); /* Update the path to your image */
+            background-size: cover; /* Ensures the image covers the entire body */
+            background-position: center; /* Centers the image */
+            background-attachment: fixed; /* Keeps the background fixed while scrolling */
+            background-repeat: no-repeat; /* Prevents repeating the background image */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row-reverse;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Optional: white background with opacity for readability */
+            border-radius: 10px; /* Optional: round the corners of the container */
+        }
+
+        main {
+            flex: 3;
+        }
+
+        aside {
+            flex: 1;
+            background-color: #f4f4f4;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-right: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #fafafa;
+        }
+
+        header, footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .ref li {
+            list-style: none;
+            padding-bottom: 9px;
+        }
+
+        aside a {
+            text-decoration: none;
+        }
+
+        aside li {
+            padding-bottom: 4px;
+        }
+
+        .stud {
+            text-align: center;
+            line-height: 0;
+            background-color: #cbccc2ef;
+            color: white;
+            margin-top: 8px;
+        }
+
+        .top {
+            position: fixed;
+            bottom: 5%;
+            right: 5%;
+        }
+
+        .top a {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .top a:hover {
+            background-color: #0056b3;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            width: 90%;
+        }
+		/* Navbar Styles */
+		header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1px 40px;
+			background: rgba(0, 0, 0, 0.75);
+			position: relative;
+			z-index: 1;
+			border-bottom-left-radius: 30px;
+			border-bottom-right-radius: 30px;
+		}
+
+		header::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+			transition: .5s;
+		}
+
+		header:hover::after {
+			left: 100%;
+		}
+
+		.logo img {
+			width: 80px;
+			z-index:5;
+		}
+
+		nav {
+			text-align: center;
+			padding: 40px 50px 37px 50px;
+			flex-grow: 1;
+		}
+
+		nav ul {
+			list-style: none;
+			display: flex;
+			justify-content: center;
+			gap: 51px;
+			border-radius:50px;
+		}
+
+		nav ul li {
+			display: inline;
+		}
+
+		nav ul li a {
+			text-decoration: none;
+			color: white;
+			font-weight: 750;
+			font-size: 20px;
+			padding: 10px 10px;
+			transition: all 1s ease;
+		}
+
+		nav ul li a:hover {
+			color: cyan;
+			border-bottom: 2px solid cyan;
+			border-radius: 15px;
+		}
+		footer {
+			position: relative;
+			width: 100%;
+			height: 400px; /* Adjust height as needed */
+			overflow: hidden;
+			margin-top: 100px; /* Push footer below content */
+			z-index: 2;
+		}
+
+		footer video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: -1;
+			filter: blur(10px);
+			
+		}
+
+
+
+			.footer-content {
+				position: relative;
+				bottom: 50px;
+				left: 50%;
+				transform: translateX(-50%);
+				text-align: center;
+				color: white;
+				width: 100%;
+				display: flex;
+				justify-content: space-around;
+				flex-wrap: wrap;
+				background: rgba(0, 0, 0,0); /* Semi-transparent background for readability */
+				padding: 30px ;
+				backdrop-filter: none; 
+			}
+
+			.footer-section {
+				font-family: 'Poppins';
+				font-style: normal;
+				margin: 10px;
+				font-weight: bold;
+				font-size: 25px;
+			}
+
+			.footer-section h3 {
+				margin-bottom: 10px;
+			}
+
+			.footer-section ul {
+				list-style: none;
+				padding: 0;
+			}
+
+			.footer-section ul li {
+				margin: 5px 0;
+			}
+
+			.footer-section ul li a {
+				color: white;
+				text-decoration: none;
+
+			}
+
+			.footer-section ul li a:hover {
+				text-decoration: underline;
+				color: cyan;
+				border-bottom: 2px solid cyan;
+				border-radius: 55px;
+				}
+				
+
+
+
+		}
+		.footer-section {
+			flex: 1;  /* Allow sections to take equal width */
+			min-width: 250px;  /* Ensure sections don't get too narrow on small screens */
+			margin-top: 20px;
+		}
+
+		.footer-section h3 {
+			margin-bottom: 15px;
+		}
+
+		.footer-section ul {
+			list-style: none;
+			padding: 5px;
+		}
+
+		.footer-section ul li {
+			margin-bottom: 10px;
+		}
+
+		.footer-section ul li a {
+			color: white;
+			text-decoration: none;
+		}
+
+		.footer-section ul li a:hover {
+			text-decoration: underline;
+			color: cyan;
+		}
+
+		.footer-section:nth-child(3) h3 {
+			margin-left: -50px /* Adjust this value to move the heading to the left */
+		}
+
+		.footer-section .elements a {
+			color: white;
+			text-decoration: none; /* Remove default underline */
+			font-size: 16px;
+		}
+
+		.footer-section .elements a:hover {
+			text-decoration: underline;
+			color: cyan;
+			border-bottom: 2px solid cyan;
+			border-radius: 55px;
+		}
+
+
+		.social-icons {
+			display: flex;
+			gap: 20px;
+			padding: 0;
+			list-style: none;
+		}
+
+		.social-icons li {
+			display: inline;
+		}
+
+		.social-icons li a {
+			color: white;
+			font-size: 30px;
+			text-decoration: none;
+		}
+
+		.social-icons li a:hover {
+			color: cyan;
+		}		
+		
+    </style>
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <header>
+        <div class="logo">
+            <img src="fish.png" alt="Life Below Water Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="able.html">MEMBERSHIP</a></li>
+                <li><a href="feedback.html.html">FEEDBACK</a></li>
+                <li><a href="Profile.html">USER PROFILE</a></li>
+                <li><a href="Team.html">ABOUT US</a></li>
+                <li><a href="Sitemap.html">SITE MAP</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="stud">
+        <h2>Dhanula Rajakaruna, Student 4</h2>
+    </section>
+
+    <div class="container">
+        <main>
+            <section id="profilePage">  <!-- Added id for Profile page -->
+                <h2 id="splashVal">Profile Page Validation Report</h2>
+                <p>The validation report praised my use of semantic HTML and accessibility features, confirming that alt text and proper structure enhance user interaction. It reaffirmed my commitment to inclusive design.</p> 
+                <img src="ProfilePageValidation.png" alt="Validation report for the splash page">
+                <h3>Back to Page Editor page</h3>
+                <p><a href="../page editor/pageediter.html">Include a link back to the corresponding section of the Page Editor.</a></p>
+            </section>
+
+            <section id="sitemapPage">  <!-- Added id for Sitemap page -->
+                <h2 id="volunteerVal">Site Map Page Validation Report</h2>
+                <p>Validation results highlighted the effective use of navigational elements. They showcased how semantic tags improved accessibility and guided users, motivating me to maintain organized and user-friendly layouts.</p>
+                <img src="siteMapValidation.png" alt="Validation report for the volunteer page">
+                <h3>Back to Page Editor page</h3>
+                <p><a href="../page editor/pageediter.html">Include a link back to the corresponding section of the Page Editor.</a></p>
+            </section>
+
+            <section id="contentPage">  <!-- Added id for Content page -->
+                <h2 id="contentVal">Content Page Validation Report</h2>
+                <p>The report emphasized successful multimedia integration and responsive design. It reinforced the importance of alt text for images and inspired me to further enhance interactivity and engagement in future projects.</p>
+                <img src="contentPageValidator.png" alt="Validation report for the content page">
+                <h3>Back to Page Editor page</h3>
+                <p><a href="../page editor/pageediter.html">Include a link back to the corresponding section of the Page Editor.</a></p>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <aside>
+            <h3>Core Pages Developed:</h3>
+            <ul class="top-level-ul">
+                <li>Student 1</li>
+                <ul> 
+                    <li><a href="#splashVal">Splash page validation</a></li>
+                    <li><a href="#volunteerVal">Volunteer page validation</a></li>
+                    <li><a href="#contentVal">Content page validation</a></li>
+                </ul>
+                <li>Student 2</li>
+                <ul>
+                    <li><a href="#">Home page </a></li>
+                    <li><a href="#">Table page</a></li>
+                    <li><a href="#">Content page</a></li>
+                </ul>
+                <li>Student 3</li>
+                <ul>
+                    <li><a href="#">Feedback page</a></li>
+                    <li><a href="#">Team page</a></li>
+                    <li><a href="#">Content page</a></li>
+                </ul>
+                <li>Student 4</li>
+                <ul>
+                    <li><a href="#profilePage">Profile page</a></li>  <!-- Updated link -->
+                    <li><a href="#sitemapPage">Sitemap page</a></li>  <!-- Updated link -->
+                    <li><a href="#contentPage">Content page</a></li>  <!-- Updated link -->
+                </ul>
+            </ul>
+        </aside>
+    </div>
+
+<footer>
+    <div class="footer-overlay"></div>
+    <video autoplay loop muted>
+        <source src="Shark.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+<div class="footer-content">
+<div class="footer-section">
+    <h3 class="H3">Contact Us</h3>
+    <div class="elements">
+        <a href="mailto:husniatham@gmail.com">Email: <br>husniatham@gmail.com</a>
+        <p>Phone: <br>  +94 71 439 8375</p>
+        <p>Address: Mount Lavinia</p>
+    </div>
+</div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="able.html">MEMBERSHIP</a></li>
+                <li><a href="feedback.html.html">FEEDBACK</a></li>
+                <li><a href="Profile.html">USER PROFILE</a></li>
+                <li><a href="Team.html">ABOUT US</a></li>
+                <li><a href="Sitemap.html">SITE MAP</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <ul class="social-icons">
+                <li><a href="https://www.facebook.com/profile.php?id=100074258534518" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://x.com/alwaysPasindu" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://github.com/Husni-01" target="_blank"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/husni-atham-22b80432a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSljn%2BDHPTFOr13rGdimLgA%3D%3D" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+		        <div class="footer-section">
+            <h3>Page Editors</h3>
+            <ul>
+                <li><a href="pageEditor_ST1.html">Student 1</a></li>
+                <li><a href="#">Student 2</a></li>
+                <li><a href="#">Student 3</a></li>
+                <li><a href="#">Student 4</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

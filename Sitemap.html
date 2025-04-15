@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Visual Sitemap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #e9d8fd;
+            background-image: url('sitemap.png'); /* Add your background image URL here */
+            background-size: cover; /* Ensure the image covers the entire background */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+            background-position: center; /* Center the background image */
+            margin: 20px;
+        }
+        svg {
+            width: 80%;
+            height: auto;
+        }
+        text {
+            font-size: 14px;
+            font-weight: bold;
+            text-anchor: middle;
+            dominant-baseline: middle;
+        }
+        .node {
+            fill: white;
+            stroke: #000;
+            stroke-width: 2;
+            transition: fill 0.3s ease; /* Smooth color transition */
+        }
+        .home {
+            fill: #a855f7;
+            stroke: #000;
+            transition: fill 0.3s ease; /* Smooth color transition */
+        }
+        .login {
+            fill: white;
+            stroke: #000;
+            transition: fill 0.3s ease; /* Smooth color transition */
+        }
+        .arrow {
+            fill: none;
+            stroke: black;
+            stroke-width: 2;
+        }
+        a {
+            cursor: pointer; /* Change cursor to pointer for clickable elements */
+        }
+        /* Hover effect for nodes */
+        .node:hover {
+            fill: #d1b3ff; /* Lighter purple on hover */
+        }
+        .home:hover {
+            fill: #c084fc; /* Lighter purple for home node on hover */
+        }
+        .login:hover {
+            fill: #d1b3ff; /* Lighter purple for login node on hover */
+        }
+				footer {
+			position: relative;
+			width: 100%;
+			height: 400px; /* Adjust height as needed */
+			overflow: hidden;
+			margin-top: 100px; /* Push footer below content */
+			z-index: 2;
+		}
+		/* Navbar Styles */
+			header {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 1px 40px;
+				background: rgba(0, 0, 0, 0.75);
+				position: relative;
+				z-index: 1;
+				border-bottom-left-radius: 30px;
+				border-bottom-right-radius: 30px;
+			}
+
+			header::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: -100%;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+				transition: .5s;
+			}
+
+			header:hover::after {
+				left: 100%;
+			}
+
+			.logo img {
+				width: 80px;
+				z-index:5;
+			}
+
+			nav {
+				text-align: center;
+				padding: 40px 50px 37px 50px;
+				flex-grow: 1;
+			}
+
+			nav ul {
+				list-style: none;
+				display: flex;
+				justify-content: center;
+				gap: 51px;
+				border-radius:50px;
+			}
+
+			nav ul li {
+				display: inline;
+			}
+
+			nav ul li a {
+				text-decoration: none;
+				color: white;
+				font-weight: 750;
+				font-size: 20px;
+				padding: 10px 10px;
+				transition: all 1s ease;
+			}
+
+			nav ul li a:hover {
+				color: cyan;
+				border-bottom: 2px solid cyan;
+				border-radius: 15px;
+			}
+
+		footer video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: -1;
+			filter: blur(10px);
+			
+		}
+
+
+
+			.footer-content {
+				position: relative;
+				bottom: 50px;
+				left: 50%;
+				transform: translateX(-50%);
+				text-align: center;
+				color: white;
+				width: 100%;
+				display: flex;
+				justify-content: space-around;
+				flex-wrap: wrap;
+				background: rgba(0, 0, 0,0); /* Semi-transparent background for readability */
+				padding: 30px ;
+				backdrop-filter: none; 
+			}
+
+			.footer-section {
+				font-family: 'Poppins';
+				font-style: normal;
+				margin: 10px;
+				font-weight: bold;
+				font-size: 25px;
+			}
+
+			.footer-section h3 {
+				margin-bottom: 10px;
+			}
+
+			.footer-section ul {
+				list-style: none;
+				padding: 0;
+			}
+
+			.footer-section ul li {
+				margin: 5px 0;
+			}
+
+			.footer-section ul li a {
+				color: white;
+				text-decoration: none;
+
+			}
+
+			.footer-section ul li a:hover {
+				text-decoration: underline;
+				color: cyan;
+				border-bottom: 2px solid cyan;
+				border-radius: 55px;
+				}
+				
+
+
+
+		}
+		.footer-section {
+			flex: 1;  /* Allow sections to take equal width */
+			min-width: 250px;  /* Ensure sections don't get too narrow on small screens */
+			margin-top: 20px;
+		}
+
+		.footer-section h3 {
+			margin-bottom: 15px;
+		}
+
+		.footer-section ul {
+			list-style: none;
+			padding: 5px;
+		}
+
+		.footer-section ul li {
+			margin-bottom: 10px;
+		}
+
+		.footer-section ul li a {
+			color: white;
+			text-decoration: none;
+		}
+
+		.footer-section ul li a:hover {
+			text-decoration: underline;
+			color: cyan;
+		}
+
+		.footer-section:nth-child(3) h3 {
+			margin-left: -50px /* Adjust this value to move the heading to the left */
+		}
+
+		.footer-section .elements a {
+			color: white;
+			text-decoration: none; /* Remove default underline */
+			font-size: 16px;
+		}
+
+		.footer-section .elements a:hover {
+			text-decoration: underline;
+			color: cyan;
+			border-bottom: 2px solid cyan;
+			border-radius: 55px;
+		}
+
+
+		.social-icons {
+			display: flex;
+			gap: 20px;
+			padding: 0;
+			list-style: none;
+		}
+
+		.social-icons li {
+			display: inline;
+		}
+
+		.social-icons li a {
+			color: white;
+			font-size: 30px;
+			text-decoration: none;
+		}
+
+		.social-icons li a:hover {
+			color: cyan;
+		}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="fish.png" alt="Life Below Water Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="able.html">MEMBERSHIP</a></li>
+                <li><a href="feedback.html.html">FEEDBACK</a></li>
+                <li><a href="Profile.html">USER PROFILE</a></li>
+                <li><a href="Team.html">ABOUT US</a></li>
+                <li><a href="Sitemap.html">SITE MAP</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Visual Sitemap</h1>
+    <svg viewBox="0 0 600 400">
+        <!-- Home Node -->
+        <a href="https://www.example.com/home">
+            <rect class="node home" x="250" y="20" width="100" height="40" rx="15" ry="15"/>
+            <text x="300" y="40" fill="white">Home</text>
+        </a>
+
+        <!-- First Level Nodes -->
+        <a href="https://www.example.com/product">
+            <rect class="node" x="10" y="100" width="100" height="40" rx="15" ry="15"/>
+            <text x="60" y="120">Product</text>
+        </a>
+        
+        <a href="https://www.example.com/solution">
+            <rect class="node" x="130" y="100" width="100" height="40" rx="15" ry="15"/>
+            <text x="180" y="120">Solution</text>
+        </a>
+        
+        <a href="https://www.example.com/blog">
+            <rect class="node" x="250" y="100" width="100" height="40" rx="15" ry="15"/>
+            <text x="300" y="120">Blog</text>
+        </a>
+        
+        <!-- Log in Node -->
+        <a href="https://www.example.com/login">
+            <rect class="node login" x="370" y="100" width="100" height="40" rx="15" ry="15"/>
+            <text x="420" y="120">Log in</text>
+        </a>
+        
+        <a href="https://www.example.com/resources">
+            <rect class="node" x="490" y="100" width="100" height="40" rx="15" ry="15"/>
+            <text x="540" y="120">Resources</text>
+        </a>
+
+        <!-- Second Level Nodes -->
+        <a href="https://www.example.com/development">
+            <rect class="node" x="130" y="180" width="100" height="40" rx="15" ry="15"/>
+            <text x="180" y="200">Development</text>
+        </a>
+        
+        <a href="https://www.example.com/latest-post">
+            <rect class="node" x="250" y="180" width="100" height="40" rx="15" ry="15"/>
+            <text x="300" y="200">Latest Post</text>
+        </a>
+
+        <!-- Third Level Nodes -->
+        <a href="https://www.example.com/tour">
+            <rect class="node" x="10" y="260" width="100" height="40" rx="15" ry="15"/>
+            <text x="60" y="280">Tour</text>
+        </a>
+        
+        <a href="https://www.example.com/trial">
+            <rect class="node" x="130" y="260" width="100" height="40" rx="15" ry="15"/>
+            <text x="180" y="280">Trial</text>
+        </a>
+
+        <!-- Connecting Lines -->
+        <!-- Home to First Level -->
+        <path class="arrow" d="M300 60 V80 H60 V100"/>
+        <path class="arrow" d="M300 60 V80 H180 V100"/>
+        <path class="arrow" d="M300 60 V80 H300 V100"/>
+        <path class="arrow" d="M300 60 V80 H420 V100"/>
+        <path class="arrow" d="M300 60 V80 H540 V100"/>
+
+        <!-- First to Second Level -->
+        <line class="arrow" x1="180" y1="140" x2="180" y2="180"/>
+        <line class="arrow" x1="300" y1="140" x2="300" y2="180"/>
+
+        <!-- Connect Tour and Trial together -->
+        <line class="arrow" x1="110" y1="280" x2="130" y2="280"/>
+
+        <!-- Connect Product to Tour -->
+        <path class="arrow" d="M60 140 V220 H60 V260"/>
+    </svg>
+<footer>
+    <div class="footer-overlay"></div>
+    <video autoplay loop muted>
+        <source src="Shark.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+<div class="footer-content">
+<div class="footer-section">
+    <h3 class="H3">Contact Us</h3>
+    <div class="elements">
+        <a href="mailto:husniatham@gmail.com">Email: <br>husniatham@gmail.com</a>
+        <p>Phone: <br>  +94 71 439 8375</p>
+        <p>Address: Mount Lavinia</p>
+    </div>
+</div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="able.html">MEMBERSHIP</a></li>
+                <li><a href="feedback.html.html">FEEDBACK</a></li>
+                <li><a href="Profile.html">USER PROFILE</a></li>
+                <li><a href="Team.html">ABOUT US</a></li>
+                <li><a href="#">SITE MAP</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <ul class="social-icons">
+                <li><a href="https://www.facebook.com/profile.php?id=100074258534518" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://x.com/alwaysPasindu" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://github.com/Husni-01" target="_blank"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/husni-atham-22b80432a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSljn%2BDHPTFOr13rGdimLgA%3D%3D" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+		        <div class="footer-section">
+            <h3>Page Editors</h3>
+            <ul>
+                <li><a href="pageEditor_ST1.html">Student 1</a></li>
+                <li><a href="PageEditor_ST2.html">Student 2</a></li>
+                <li><a href="pageEditor_ST3.html.html">Student 3</a></li>
+                <li><a href="pageediter.html">Student 4</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>	
+</body>
+</html>

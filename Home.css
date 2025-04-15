@@ -1,0 +1,325 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Full-Screen Video Background */
+#myVideo {
+    position: fixed; /* Keeps the video fixed in the background */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+        h3 {
+            color: #4a90e2;
+            margin-bottom: 10px;
+        }
+
+/* General body styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 40px;
+    background: rgba(0, 0, 0, 0.75);
+    position: relative;
+    z-index: 1;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+    transition: .5s;
+}
+
+header:hover::after {
+    left: 100%;
+}
+
+.logo img {
+    width: 80px;
+	z-index:5;
+}
+
+nav {
+    text-align: center;
+    padding: 40px 50px 37px 50px;
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 51px;
+	border-radius:50px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 750;
+    font-size: 20px;
+    padding: 10px 10px;
+    transition: all 1s ease;
+}
+
+nav ul li a:hover {
+    color: cyan;
+    border-bottom: 2px solid cyan;
+    border-radius: 15px;
+}
+
+/* Mission Section */
+.mission {
+    margin: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.missionimg {
+    height: 400px;
+    width: 400px;
+    border-radius: 35px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.missionheading {
+    margin-left: 20px;
+    color: white;
+    font-size: 90px;
+    font-weight: 705;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.content {
+    font-size: 35px;
+    position: relative;
+    top: -50px;
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.card {
+    background: white;
+    color: black;
+    width: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+}
+
+.card-icon {
+    background: #00aaff;
+    padding: 30px;
+    font-size: 40px;
+    color: white;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.button-a, .button-b, .button-c {
+    background: #03D39F;
+    margin: 1.4rem 0 0 60%;
+    padding: 8px 8px;
+    border-radius: 6px;
+    border: 1px;
+}
+
+.button-a:hover, .button-b:hover, .button-c:hover {
+    color: black;
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+}
+
+		.content{
+			z-index: 1; /* Makes sure the content stays above the video */
+			font-size:35px;
+			position: relative;
+			top: -50px;}
+			footer {
+			position: relative;
+			width: 100%;
+			height: 200px; /* Adjust height as needed */
+			overflow: hidden;
+			background: linear-gradient(to bottom, #f4f4f4, transparent);
+		}
+		footer {
+			position: relative;
+			width: 100%;
+			height: 400px; /* Adjust height as needed */
+			overflow: hidden;
+			margin-top: 100px; /* Push footer below content */
+			z-index: 2;
+		}
+
+footer video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+	filter: blur(10px);
+	
+}
+
+
+
+	.footer-content {
+        position: relative;
+		bottom: 50px;
+		left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        color: white;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        background: rgba(0, 0, 0,0); /* Semi-transparent background for readability */
+        padding: 30px ;
+		backdrop-filter: none; 
+    }
+
+    .footer-section {
+		font-family: 'Poppins';
+		font-style: normal;
+        margin: 10px;
+		font-weight: bold;
+		font-size: 25px;
+    }
+
+    .footer-section h3 {
+        margin-bottom: 10px;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-section ul li {
+        margin: 5px 0;
+    }
+
+    .footer-section ul li a {
+        color: white;
+        text-decoration: none;
+
+    }
+
+    .footer-section ul li a:hover {
+        text-decoration: underline;
+        color: cyan;
+        border-bottom: 2px solid cyan;
+        border-radius: 55px;
+        }
+		
+
+
+
+}
+.footer-section {
+    flex: 1;  /* Allow sections to take equal width */
+    min-width: 250px;  /* Ensure sections don't get too narrow on small screens */
+    margin-top: 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 5px;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+    color: cyan;
+}
+
+.footer-section:nth-child(3) h3 {
+    margin-left: -50px /* Adjust this value to move the heading to the left */
+}
+
+.footer-section .elements a {
+    color: white;
+    text-decoration: none; /* Remove default underline */
+    font-size: 16px;
+}
+
+.footer-section .elements a:hover {
+    text-decoration: underline;
+    color: cyan;
+    border-bottom: 2px solid cyan;
+    border-radius: 55px;
+}
+
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.social-icons li {
+    display: inline;
+}
+
+.social-icons li a {
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.social-icons li a:hover {
+    color: cyan;
+}

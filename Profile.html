@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	
+    <title>User Profile</title>
+    <style>
+	#myVideo {
+    position: fixed; /* Keeps the video fixed in the background */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eef1f2;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            padding-top:0; /* Added padding to push content below fixed header */
+        }
+
+/* Navbar Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.75);
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0; /* 🔥 Add this line to stretch full width */
+    z-index: 1000;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+    transition: .5s;
+}
+
+header:hover::after {
+    left: 100%;
+}
+
+.logo img {
+    width: 80px;
+	z-index:5;
+}
+
+nav {
+    text-align: center;
+    padding: 40px 0px 37px 0px;
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 51px;
+	border-radius:50px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 750;
+    font-size: 20px;
+    padding: 10px 10px;
+    transition: all 1s ease;
+}
+
+nav ul li a:hover {
+    color: cyan;
+    border-bottom: 2px solid cyan;
+    border-radius: 15px;
+}
+
+        .container {
+            background: rgba(255,255,255,0.5);
+            padding: 50px;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            margin: 0 auto 20px auto; /* Removed top margin since padding-top on body handles it */
+			display: block;
+            
+        }
+
+        .container img {
+            object-fit: cover;
+        }
+
+        .profile {
+            text-align: center;
+            padding: 30px;
+            background: #4a90e2;
+            color: white;
+            border-radius: 15px;
+            position: relative;
+        }
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .quote {
+            font-style: italic;
+            font-weight: lighter;
+            margin-bottom: 15px;
+        }
+        .skills {
+            position: relative;
+            left: 200px;
+            text-align: left; 
+            width: 400px;
+            padding: 15px; 
+            background: #ffffff; 
+            border-radius: 5px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            margin: 10px 0;
+            font-size: 12px;
+            color: black;
+        }
+        .skills .progress {
+            background: #ddd;
+            height: 8px;
+            border-radius: 5px;
+            margin-bottom: 12px;
+        }
+        .skills .bar {
+            height: 8px;
+            background: #4a90e2;
+            border-radius: 5px;
+            transition: width 0.5s;
+        }
+        .section {
+            margin-top: 20px;
+            padding: 10px;
+            background: #fff; 
+            border-radius: 5px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+			display: block;
+			width: 100%;
+			margin-bottom: 20px;
+        }
+        h3 {
+            color: #4a90e2;
+            margin-bottom: 10px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact input, .contact textarea {
+            width: 95%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        .contact input:focus, .contact textarea:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+        .contact button {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .contact button:hover {
+            background: #357ab7;
+        }
+
+        .section:hover {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+		footer {
+			position: relative;
+			width: 100%;
+			height: 400px; /* Adjust height as needed */
+			overflow: hidden;
+			margin-top: 0px; /* Push footer below content */
+			z-index: 2;
+		}
+
+		footer video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: -1;
+			filter: blur(10px);
+			
+		}
+
+
+
+			.footer-content {
+				position: relative;
+				bottom: 50px;
+				left: 50%;
+				transform: translateX(-50%);
+				text-align: center;
+				color: white;
+				width: 100%;
+				display: flex;
+				justify-content: space-around;
+				flex-wrap: wrap;
+				background: rgba(0, 0, 0,0); /* Semi-transparent background for readability */
+				padding: 30px ;
+				backdrop-filter: none; 
+			}
+
+			.footer-section {
+				font-family: 'Poppins';
+				font-style: normal;
+				margin: 10px;
+				font-weight: bold;
+				font-size: 25px;
+			}
+
+			.footer-section h3 {
+				margin-bottom: 10px;
+			}
+
+			.footer-section ul {
+				list-style: none;
+				padding: 0;
+			}
+
+			.footer-section ul li {
+				margin: 5px 0;
+			}
+
+			.footer-section ul li a {
+				color: white;
+				text-decoration: none;
+
+			}
+
+			.footer-section ul li a:hover {
+				text-decoration: underline;
+				color: cyan;
+				border-bottom: 2px solid cyan;
+				border-radius: 55px;
+				}
+				
+
+
+
+		}
+		.footer-section {
+			flex: 1;  /* Allow sections to take equal width */
+			min-width: 250px;  /* Ensure sections don't get too narrow on small screens */
+			margin-top: 20px;
+		}
+
+		.footer-section h3 {
+			margin-bottom: 15px;
+		}
+
+		.footer-section ul {
+			list-style: none;
+			padding: 5px;
+		}
+
+		.footer-section ul li {
+			margin-bottom: 10px;
+		}
+
+		.footer-section ul li a {
+			color: white;
+			text-decoration: none;
+		}
+
+		.footer-section ul li a:hover {
+			text-decoration: underline;
+			color: cyan;
+		}
+
+		.footer-section:nth-child(3) h3 {
+			margin-left: -50px /* Adjust this value to move the heading to the left */
+		}
+
+		.footer-section .elements a {
+			color: white;
+			text-decoration: none; /* Remove default underline */
+			font-size: 16px;
+		}
+
+		.footer-section .elements a:hover {
+			text-decoration: underline;
+			color: cyan;
+			border-bottom: 2px solid cyan;
+			border-radius: 55px;
+		}
+
+
+		.social-icons {
+			display: flex;
+			gap: 20px;
+			padding: 0;
+			list-style: none;
+		}
+
+		.social-icons li {
+			display: inline;
+		}
+
+		.social-icons li a {
+			color: white;
+			font-size: 30px;
+			text-decoration: none;
+		}
+
+		.social-icons li a:hover {
+			color: cyan;
+		}
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="Shark.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+
+
+    <!-- Navbar -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Life Below Water Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="able.html">MEMBERSHIP</a></li>
+                <li><a href="feedback.html.html">FEEDBACK</a></li>
+                <li><a href="Profile.html">USER PROFILE</a></li>
+                <li><a href="Team.html">ABOUT US</a></li>
+                <li><a href="Sitemap.html">SITE MAP</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="profile">
+            <img src="profile.png" alt="Profile Picture" class="profile-pic">
+            <h2>David Williams</h2>
+            <div class="details">
+                <pre><b>Age:</b>45</pre>
+                <pre><b>Work:</b>Managing Director: Avian Technologies </pre>
+                <pre><b>Location:</b>London</pre>
+            </div>
+            <div class="skills">
+                <p><strong>Communication</strong></p>
+                <div class="progress"><div class="bar" style="width: 95%;"></div></div>
+                <p><strong>Team Working</strong></p>
+                <div class="progress"><div class="bar" style="width: 95%;"></div></div>
+                <p><strong>IT</strong></p>
+                <div class="progress"><div class="bar" style="width: 90%;"></div></div>
+                <p><strong>Presentation</strong></p>
+                <div class="progress"><div class="bar" style="width: 92%;"></div></div>
+            </div>
+        </div>
+        
+        <div class="bio section">
+            <h3>Short Bio</h3>
+            <p>David Williams is a seasoned professional with over 45 years of experience in the technology sector. As the Managing Director of Avian Technologies, based in London, he oversees strategic direction and operational leadership, driving innovation and growth within the company. With a strong background in tech leadership, David is dedicated to advancing the company's vision and ensuring its continued success in a competitive industry.</p>
+        </div>
+        
+        <div class="section">
+            <h3>Goals</h3>
+            <ul>
+                <li>Goals 1 - Lead Avian Technologies to industry leadership through innovation and growth.</li>
+                <li>Goals 2 - Foster a culture of creativity and collaboration.</li>
+                <li>Goals 3 - Expand global presence with strategic partnerships.</li>
+                <li>Goals 4 - Develop solutions that address industry challenges and ensure success.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>Frustrations</h3>
+            <ul>
+                <li>Balancing company growth with innovation and quality.</li>
+                <li>Staying ahead in a fast-evolving, competitive tech industry.</li>
+                <li>Overcoming resource limitations while pursuing ambitious company goals.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>Experience</h3>
+            <ul>
+                <li>20+ years of experience in tech leadership and business growth.</li>
+                <li>Expertise in strategic planning and operations.</li>
+                <li>Proven track record in team building and innovation.</li>
+                <li>Experience managing large-scale projects and collaboration.</li>
+                <li>Strong background in market expansion and partnerships.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>Volunteering Availability</h3>
+            <fieldset>
+                <label for="datetime">Date & Time Selection:</label>
+                <input type="datetime-local" id="datetime">
+            </fieldset>
+        </div>
+        
+        <div class="section">
+            <h3>UN Goals I Support</h3>
+            <img src="life below water.png" alt="Life below water" width="50" height="50">
+        </div>
+        
+        <div class="contact section">
+            <h3>Contact Me</h3>
+            <form>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+	    </footer>
+	<footer>
+    <div class="footer-overlay"></div>
+    <video autoplay loop muted>
+        <source src="Shark.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+<div class="footer-content">
+<div class="footer-section">
+    <h3 class="H3">Contact Us</h3>
+    <div class="elements">
+        <a href=""mailto:husniatham@gmail.com">Email: <br>husniatham@gmail.com</a>
+        <p>Phone: <br>  +94 71 439 8375</p>
+        <p>Address: Mount Lavinia</p>
+    </div>
+</div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="able.html">MEMBERSHIP</a></li>
+                <li><a href="feedback.html.html">FEEDBACK</a></li>
+                <li><a href="Profile.html">USER PROFILE</a></li>
+                <li><a href="Team.html">ABOUT US</a></li>
+                <li><a href="Sitemap.html">SITE MAP</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <ul class="social-icons">
+                <li><a href="https://www.facebook.com/profile.php?id=100074258534518" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://x.com/alwaysPasindu" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://github.com/Husni-01" target="_blank"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/husni-atham-22b80432a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSljn%2BDHPTFOr13rGdimLgA%3D%3D" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+		        <div class="footer-section">
+            <h3>Page Editors</h3>
+            <ul>
+                <li><a href="pageEditor_ST1.html">Student 1</a></li>
+                <li><a href="PageEditor_ST2.html">Student 2</a></li>
+                <li><a href="pageEditor_ST3.html.html">Student 3</a></li>
+                <li><a href="pageediter.html">Student 4</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+	
+</body>
+</html>

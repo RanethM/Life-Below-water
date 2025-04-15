@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="shop.css">
+    <title>Shop</title>   
+	
+    <style>
+	        /* Full-Screen Video Background */
+        #myVideo {
+            position: fixed; /* Keeps the video fixed in the background */
+            top: 0;
+            left: 0;
+            width: 100%; /* Make sure the video spans the entire width */
+            height: 100%; /* Make sure the video spans the entire height */
+            object-fit: cover; /* Ensures the video covers the full screen without distortion */
+            z-index: -1; /* Keeps the video behind other content */
+        }
+
+        /* General body styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins';
+			font-style: normal;
+            color: white;
+			display: flex;
+			flex-direction: column;
+			min-height: 100vh; 
+        }
+
+        /* Navbar Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px; /* Adjusted padding */
+            background: rgba(0, 0, 0, 0.75);
+            position: relative;
+            z-index: 1; /* Makes sure the navbar stays above the video */
+        }
+		
+		header::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -100%;  /* Starts off-screen on the left */
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);  /* White gradient */
+			transition: .5s;  /* Smooth transition */
+		}
+
+		header:hover::after {
+			left: 100%;  /* Moves the element off-screen to the right when hovered */
+		}
+
+        .logo img {
+            width: 80px;
+            /* Ensure the logo is on the left */
+        }
+
+        nav {
+            text-align: center;
+            background: rgba(0, 0, 0, 0);
+            padding: 40px 50px 37px 50px;
+            flex-grow: 1; /* Ensures the nav takes up the remaining space */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 51px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 750;
+            font-size: 20px;
+            padding: 10px 10px;
+        }
+
+        nav ul li a:hover {
+            color: cyan;
+            border-bottom: 2px solid cyan;
+            border-radius: 15px;
+        }
+
+
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 100px;
+        }
+
+		.card-icon {
+			background: #00aaff;
+			padding: 30px;
+			font-size: 40px;
+			color: white;
+		}
+
+
+		/* Additional Styling for Cards */
+		.card {
+			background: white;
+			color: black;
+			width: 300px;
+			border-radius: 15px;
+			overflow: hidden;
+			text-align: center;
+			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+			margin: 20px; /* Space between cards */
+		}
+
+		.card-content {
+			padding: 1rem;
+		}
+
+        .button-a {
+            background: #03D39F;
+            font-weight: 500;
+            margin: 1.4rem 0 0 60%;
+            padding: 8px 8px;
+            border-radius: 6px;
+            border: 1px;
+        }
+
+        .button-a:hover {
+            box-shadow: 0 0 5px #03D39F, 0 0 20px #03D39F, 0 0 50px #03D39F, 0 0 100px #03D39F;
+        }
+
+        .button-b {
+            background: #03D39F;
+            margin: 1.4rem 0 0 60%;
+            padding: 8px 8px;
+            border-radius: 6px;
+            border: 1px;
+        }
+
+        .button-b:hover {
+            box-shadow: 0 0 5px #03D39F, 0 0 20px #03D39F, 0 0 50px #03D39F, 0 0 100px #03D39F;
+        }
+
+        .button-c {
+            background: #03D39F;
+            margin: 1.4rem 0 0 60%;
+            padding: 8px 8px;
+            border-radius: 6px;
+            border: 1px;
+        }
+
+        .button-c:hover {
+            box-shadow: 0 0 5px #03D39F, 0 0 20px #03D39F, 0 0 50px #03D39F, 0 0 100px #03D39F;
+        }
+		/* Mission section */
+		.mission {
+			margin: 4rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 28px;
+		}
+
+		.missionimg {
+			height: 400px;
+			width: 400px;
+			border-radius: 35px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+			transition: box-shadow 0.3s ease;
+		}
+
+		.missionheading {
+			margin-left: 20px;
+			color: white;
+			font-size: 90px;
+			font-weight: 705;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+			transition: text-shadow 0.3s ease;
+		}
+
+		.content{
+			z-index: 1; /* Makes sure the content stays above the video */
+			font-size:35px;
+			position: relative;
+			top: -50px;}
+			footer {
+			position: relative;
+			width: 100%;
+			height: 200px; /* Adjust height as needed */
+			overflow: hidden;
+			background: linear-gradient(to bottom, #f4f4f4, transparent);
+		}
+		footer {
+			position: relative;
+			width: 100%;
+			height: 400px; /* Adjust height as needed */
+			overflow: hidden;
+			margin-top: 100px; /* Push footer below content */
+			z-index: 2;
+		}
+
+		footer video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			filter: blur(12px);  /* Apply blur effect to the video */
+			z-index: -1;
+		}
+
+
+	.footer-content {
+        position: relative;
+		bottom: 50px;
+		left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        color: white;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        background: rgba(0, 0, 0,0); /* Semi-transparent background for readability */
+        padding: 30px ;
+		backdrop-filter: none; 
+    }
+
+    .footer-section {
+		font-family: 'Poppins';
+		font-style: normal;
+        margin: 10px;
+		font-weight: bold;
+		font-size: 25px;
+    }
+
+    .footer-section h3 {
+        margin-bottom: 10px;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-section ul li {
+        margin: 5px 0;
+    }
+
+    .footer-section ul li a {
+        color: white;
+        text-decoration: none;
+
+    }
+
+    .footer-section ul li a:hover {
+        text-decoration: underline;
+        color: cyan;
+        border-bottom: 2px solid cyan;
+        border-radius: 55px;
+        }
+		
+
+
+	.footer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 91, 255, 0.71); /* Semi-transparent blue */
+    z-index: -1;
+}
+.footer-section {
+    flex: 1;  /* Allow sections to take equal width */
+    min-width: 250px;  /* Ensure sections don't get too narrow on small screens */
+    margin-top: 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 5px;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+    color: cyan;
+}
+
+.footer-section:nth-child(3) h3 {
+    margin-left: -180px; /* Adjust this value to move the heading to the left */
+}
+
+.footer-section .elements a {
+    color: white;
+    text-decoration: none; /* Remove default underline */
+    font-size: 16px;
+}
+
+.footer-section .elements a:hover {
+    text-decoration: underline;
+    color: cyan;
+    border-bottom: 2px solid cyan;
+    border-radius: 55px;
+}
+
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.social-icons li {
+    display: inline;
+}
+
+.social-icons li a {
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.social-icons li a:hover {
+    color: cyan;
+}
+
+	
+	</style>
+	
+
+</head>
+<body> 
+    <header class="header">
+        <a href="Home.html" class="logo"><img src="logo.png"  alt="LOGO" class="logo"></a> 
+
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="close-icon"></i>
+            <i class='bx bx-x' id="menu-icon"></i>
+
+        </label>
+        <nav class="navbar">
+
+                <a href="Home.html"  style="--i:0;">HOME <span></span></a>
+                <a href="Gallery.html" style="--i:1;">GALLERY <span></span></a> 
+                <a href="shop.html"  class="active" style="--i:2;">SHOP <span></span></a>
+                <a href="Feedback.html" style="--i:3;">FEEDBACK <span></span></a>
+                <a href="profile.html" style="--i:4;">USER&nbsp;&nbsp;PROFILE <span></span></a>
+                <a href="team.html" style="--i:5;">ABOUT&nbsp;&nbsp;US <span></span></a>
+                <a href="Sitemap.html" style="--i:6;">SITE&nbsp;&nbsp;MAP <span></span></a>
+        </nav>
+    </header>
+        <br><br><br><br><br><br><br><br>
+        <section>
+            <div class="backdrop"></div>
+                    <div class="shop_header">
+                        <div id="shop"></div>
+                        <div class="shop_name">
+
+
+                        <h2 id="h1">SHOP <sup>@</sup> LIFE BELOW WATER</h2>
+
+                        </div>
+                        <div class="cart_icon">    
+                        <svg  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="50" height="" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                        </svg>
+                        </div>                  
+                    </div>
+
+                   
+                        <div class="categories">
+                            <a href="#tshirt"><h3>T-SHIRTS</h3></a>
+                            <a href="#accessories"><h3>ACCESSORIES</h3></a> 
+                            <a href="#mugs"><h3>MUGS</h3></a> 
+
+                        </div>
+                        <div class="shop_content">
+                        <div id="tshirt">
+                            <div class="product_row">
+                                <div class="items">
+                                    <div class="product_details">
+                                        <div class="shopItem">
+                                            <img src="save turtle.jpg" alt="Tshirt image 01">
+                                        </div>                   
+                                        <div class="product_name">Save a Turtle T-Shirt</div>
+                                        <div class="product_price">Price : $12</div>
+                                        <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                    </div>
+                                </div>
+                                <div class="product_details">
+                                    <div class="shopItem">
+                                        <img src="SaveOcean.jpg" alt="Tshirt image 02">
+                                    </div>               
+                                    <div class="product_name">Save the OceanT-Shirt</div>
+                                    <div class="product_price">Price : $15</div>
+                                    <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                </div>
+                    
+                                <div class="product_details">
+                                    <div class="shopItem">
+                                        <img src="save turtle.jpg" alt="Tshirt image 03">
+                                    </div>                
+                                    <div class="product_name">Ocean Fever T-Shirt</div>
+                                    <div class="product_price">Price : $10</div>
+                                    <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                </div>
+
+                                <div class="product_details">
+                                    <div class="shopItem">
+                                        <img src="SaveOcean.jpg" alt="Tshirt image 04">
+                                    </div>                
+                                    <div class="product_name">Ocean Life T-Shirt</div>
+                                    <div class="product_price">Price : $13</div>
+                                    <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="accessories">
+                            <div class="product_row">
+                                <div class="items">
+                                    <div class="product_details">
+                                        <div class="shopItem">
+                                            <img src="images/shop/jewellery1.jpg" alt="jewellery image 01">
+                                        </div>                   
+                                        <div class="product_name">Starfish Bracelet</div>
+                                        <div class="product_price">Price : $5</div>
+                                        <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                    </div>
+                                </div>
+                                <div class="product_details">
+                                    <div class="shopItem">
+                                        <img src="images/shop/jewellery2.jpg" alt="jewellery image 02">
+                                    </div>               
+                                    <div class="product_name">Turtle Necklace</div>
+                                    <div class="product_price">Price : $4</div>
+                                    <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                </div>
+                    
+                                <div class="product_details">
+                                    <div class="shopItem">
+                                        <img src="images/shop/jewellery3.jpg" alt="jewellery image 03">
+                                    </div>                
+                                    <div class="product_name">Turtle Bracelet</div>
+                                    <div class="product_price">Price : $3</div>
+                                    <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                </div>
+
+                                <div class="product_details">
+                                    <div class="shopItem">
+                                        <img src="images/shop/jewellery4.jpg" alt="jewellery image 04">
+                                    </div>                
+                                    <div class="product_name">Ocean themed Anklet</div>
+                                    <div class="product_price">Price : $5</div>
+                                    <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="mugs">
+                            <div class="product_row">
+                                <div class="items">
+                                    <div class="product_details">
+                                        <div class="shopItem">
+                                            <img src="images/shop/mug1.jpg" alt="Mug image 01">
+                                        </div>                   
+                                        <div class="product_name">Turtle Mug</div>
+                                        <div class="product_price">Price : $7</div>
+                                        <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                    </div>
+                                </div>
+                                <div class="product_details">
+                                    <div class="shopItem">
+                                        <img src="images/shop/mug2.jpg" alt="Mug image 02">
+                                    </div>               
+                                    <div class="product_name">Ocean themed Mug</div>
+                                    <div class="product_price">Price : $7</div>
+                                    <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                </div>
+                    
+                                <div class="product_details">
+                                    <div class="shopItem">
+                                        <img src="images/shop/mug3.jpg" alt="Mug image 03">
+                                    </div>                
+                                    <div class="product_name">Protect our ocean Mug</div>
+                                    <div class="product_price">Price : $7</div>
+                                    <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                </div>
+
+                                <div class="product_details">
+                                    <div class="shopItem">
+                                        <img src="images/shop/mug4.jpg" alt="Mug image 04">
+                                    </div>                
+                                    <div class="product_name">Turtle life Mug</div>
+                                    <div class="product_price">Price : $7</div>
+                                    <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="pillows">
+                            <div class="product_row">
+                                <div class="items">
+                                    <div class="product_details">
+                                        <div class="shopItem">
+                                            <img src="images/shop/pillow1.jpg" alt="Pillow image 01">
+                                        </div>                   
+                                        <div class="product_name">Murmaid painted Pillow</div>
+                                        <div class="product_price">Price : $10</div>
+                                        <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                    </div>
+                                </div>
+                                <div class="product_details">
+                                    <div class="shopItem">
+                                        <img src="images/shop/pillow2.jpg" alt="Pillow image 02">
+                                    </div>               
+                                    <div class="product_name">Starfish painted Pillow</div>
+                                    <div class="product_price">Price : $9</div>
+                                    <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                </div>
+                    
+                                <div class="product_details">
+                                    <div class="shopItem">
+                                        <img src="images/shop/pillow3.jpg" alt="Pillow image 03">
+                                    </div>                
+                                    <div class="product_name">Cute turtle printed Pillow</div>
+                                    <div class="product_price">Price : $9</div>
+                                    <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                </div>
+
+                                <div class="product_details">
+                                    <div class="shopItem">
+                                        <img src="images/shop/pillow4.jpg" alt="Pillow image 04">
+                                    </div>                
+                                    <div class="product_name">Save the ocean Pillow</div>
+                                    <div class="product_price">Price : $10</div>
+                                    <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                </div>
+                            </div>    
+                        </div>
+                    
+
+                        <div id="painting">
+                            <div class="product_row">
+                                <div class="items">
+                                    <div class="product_details">
+                                        <div class="shopItem">
+                                            <img src="images/shop/oceanpainting3.jpg" alt="Painting image 01">
+                                        </div>                   
+                                        <div class="product_name">Beach painting</div>
+                                        <div class="product_price">Price : $15</div>
+                                        <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                    </div>
+                                </div>
+                                <div class="product_details">
+                                    <div class="shopItem">
+                                        <img src="images/shop/oceanpainting2.jpg" alt="Painting image 02">
+                                    </div>               
+                                    <div class="product_name">Beach girl painting</div>
+                                    <div class="product_price">Price : $15</div>
+                                    <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                </div>
+                                <div class="product_details">
+                                    <div class="shopItem">
+                                        <img src="images/shop/oceanpainting4.jpg" alt="Painting image 03">
+                                    </div>                
+                                    <div class="product_name">Ocean life painting</div>
+                                    <div class="product_price">Price : $15</div>
+                                    <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                </div>
+                                <div class="product_details">
+                                    <div class="shopItem">
+                                        <img src="images/shop/oceanpainting5.jpg" alt="Painting image 04">
+                                    </div>                
+                                    <div class="product_name">Turtles painting</div>
+                                    <div class="product_price">Price : $16</div>
+                                    <div class="AddToCart_button"><button type="button">Add To Cart</button></div>
+                                </div>
+                            </div>
+                        </div>    
+                        
+                    </div>
+                </div>            
+      </section>
+      <div id="footerPart">
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <h3 class="H3">Contact Us</h3>
+                <div class="elements">
+                    <p>Email: <a href="mailto:always.pasindu@gmail.com">always.pasindu@gmail.com</a> </p>
+                    <p>Phone: <br>+94 76 925 7022</p>
+                    <p>Address: Dehiwala-Mount Lavinia</p>
+                </div>
+                </div>
+                <div class="footer-content">
+                    <h3 class="H3">Quick Links</h3>
+                     <ul class="list">
+                        <li><a href="Home.html">Home</a></li>
+                        <li><a href="Gallery.html">Gallery</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="Feedback.html">Feedback</a></li>
+                        <li><a href="team.html">About Us</a></li>
+                     </ul>
+                </div>
+                <div class="footer-content">
+                    <h3 class="H3">Follow Us</h3>
+                    <ul class="social-icons">
+                     <li><a href="https://web.facebook.com/pasishjdh?comment_id=Y29tbWVudDoxNjY3NzY0Mzc3MzAxMjMzXzgzMjA2NDM2ODg3Nzc4OQ%3D%3D" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                     <li><a href="https://x.com/alwaysPasindu" target="_blank"><i class="fab fa-twitter" ></i></a></li>
+                     <li><a href="https://github.com/alwaysPasindu" target="_blank"><i class="fab fa-github" ></i></a></li>
+                     <li><a href="https://www.linkedin.com/in/pasindu-dilshan-929865269/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                    </div>
+            </div>
+            <div class="bottom-bar">
+                <p>Copyright &copy;  2024 GROUP. E  |  Designed By <i><a href="PageEditorStudent1.html">Gayashi Ramanayake</a></i></p>
+            </div>
+        </footer>
+        </div>
+
+            <!-- cart -->
+            <div class="cartTab">
+                <h1>SHOPPING CART</h1>
+
+                <div class="cartContent">
+                   <!-- cart item will display here when checking out -->
+                </div>
+                <div class="total">
+                    <div class="totalTitle">Total</div>
+                    <div class="totalPrice">$0</div>
+                </div>
+                <div class="button">
+                    <button class="close">CLOSE</button>
+                    <button class="checkout">CHECKOUT</button>
+                </div>
+            </div>
+        
+
+
+
+    <script src="shop.js"></script>
+</body> 
+</html>

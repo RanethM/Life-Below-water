@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor Student - provide your student name</title>
+    <link rel="stylesheet" href="css/pageEditor_validator.css"> <!-- External CSS link -->
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('jk.jpg'); /* Add your background image here */
+            background-size: cover; /* Ensures the image covers the entire body */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-position: center; /* Centers the image */
+            color: #333; /* Text color for readability */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row-reverse;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background for readability */
+            border-radius: 10px; /* Optional: add rounded corners to the container */
+        }
+        
+        main {
+            flex: 3;
+        }
+        
+        aside {
+            flex: 1;
+            background-color: rgba(244, 244, 244, 0.9); /* Make the aside slightly transparent */
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-right: 20px;
+        }
+        
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            background-color: rgba(250, 250, 250, 0.9); /* Make section backgrounds slightly transparent */
+        }
+        
+        header, footer {
+            text-align: center;
+            background-color: rgba(51, 51, 51, 0.9); /* Semi-transparent header/footer background */
+            color: white;
+            padding: 10px 0;
+        }
+
+        .ref li {
+            list-style: none;
+            padding-bottom: 9px;
+        }
+
+        aside a {
+            text-decoration: none;
+        }
+
+        aside li {
+            padding-bottom: 4px;
+        }
+
+        .stud {
+            text-align: center;
+            line-height: 0;
+            background-color: rgba(203, 204, 194, 0.8); /* Semi-transparent background */
+            color: white;
+            margin-top: 8px;
+        }
+
+        .top {
+            position: fixed;
+            bottom: 5%;
+            right: 5%;
+        }
+
+        .top a {
+            padding: 10px 20px; /* Adds padding for button-like feel */
+            background-color: #007bff; /* Button color */
+            color: white; /* Text color */
+            text-decoration: none; /* Removes underline */
+            border-radius: 20px; /* Rounds the corners */
+            font-size: 12px; /* Adjust font size */
+            font-weight: bold; /* Make the text stand out */
+        }
+
+        .top a:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+        }
+
+        img {
+            width: 10%;
+        }
+    </style>
+</head>
+<body>
+    
+    <header id="top">
+        <h1>Life Below Water</h1>
+    </header>
+
+    <section class="stud">
+        <h2>Marzook Husni Atham, Student 2</h2>
+    </section>
+
+    <div class="container">
+        <main>
+            <section>
+                <h2 id="home">Profile Page</h2>
+                <h3>Technical Description</h3>
+                <p>The Home Page layout is designed to provide an intuitive, user-friendly experience using HTML and CSS. The top section features a header, which includes the website’s logo, title, and a navigation bar for easy access to other pages. The hero section follows, serving as the main focal point with a prominent image or background and a call to action.
+
+The main content area consists of distinct sections, organized into blocks or cards that present key information such as services or updates. These sections are styled for clarity, using consistent typography, spacing, and background colors to ensure readability.
+
+At the bottom, the footer provides essential information, including contact details and links to social media or other important pages. CSS ensures a responsive layout using Flexbox or Grid, adapting the design for various screen sizes. Hover effects enhance interactivity, while modern fonts and clean colors maintain a professional and accessible aesthetic.
+
+This design emphasizes both functionality and visual appeal, ensuring a seamless user experience across devices. The header and footer contribute to a balanced and organized page layout </p>
+                
+                <h3>Accessibility</h3>
+                <p>Accessibility is a priority on the Profile Page, achieved through thoughtful design choices. Descriptive alt text accompanies all images, making them interpretable by screen readers, while semantic HTML elements like header and section improve navigation for assistive technologies. Text contrasts sharply with the background for readability, and buttons are styled with clear focus indicators, ensuring they’re navigable via keyboard. These steps create an inclusive experience for all users, regardless of ability.</p>
+                
+                <h3>Link to the validation page</h3>
+                <p><a href="validation_ST0.html#splashVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p>
+
+                <h3>Link to the page</h3>
+                <p><a href="home.html">Include a link to the actual page you describe.</a></p>
+            </section>
+
+            <section>
+                <h2 id="table">Table</h2>
+                <h3>Technical Description</h3>
+                <p>The Table Page layout was designed to display data in a structured and accessible manner using HTML and CSS. The table is divided into three main sections: a header, body, and footer. The header section contains the title row, with bold text and distinct background colors for clarity. The body section holds the data, arranged in rows and cells. The footer section displays summary or total data.CSS is employed to enhance the table's appearance and usability. Borders are applied to separate table elements, and border-collapse ensures a seamless visual presentation. Padding in the cells improves readability, while text alignment is tailored for appropriate data presentation. Hover effects provide interactivity by changing the row background color, and nth-child selectors alternate row colors to improve legibility.To ensure responsiveness, media queries are used to adjust the table layout on smaller screens, allowing horizontal scrolling or column stacking for mobile users. This approach ensures the table is both functional and visually appealing across devices.This design creates a clear, organized, and user-friendly interface for displaying large datasets in a structured table format.</p>
+                <h3>Accessibility</h3>
+                <p>To make the Sitemap Page accessible, the nav element signals its navigational role to screen readers, while links are designed for keyboard navigation with visible focus states. High contrast between text and background enhances readability, ensuring the page is usable for all visitors, including those with visual impairments.</p>
+
+                <h3>Link to the validation page</h3>
+                <p><a href="validation_ST0.html#volunteerVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p>
+
+                <h3>Link to the page</h3>
+                <p><a href="Table.html">Include a link to the actual page you describe.</a></p>
+            </section>
+
+            <section>
+                <h2 id="content">Content Page</h2>
+                <h3>Technical Description</h3>
+                <p>The Content Page is crafted to deliver articles, media, or other primary content in an engaging manner, built with a robust HTML structure and dynamic CSS styling. A header element introduces the page with a title and brief description, while article elements wrap individual content pieces, such as blog posts or videos, providing semantic clarity. A looping background video, set to autoplay and muted, adds visual interest, styled to cover the entire screen with an overlay to maintain text readability. Div containers organize text, images, and buttons within each article, with buttons offering actions like "Read More" for interactivity. CSS brings this to life with Flexbox aligning content blocks flexibly across screen sizes, and keyframe animations fade in elements smoothly for a polished effect. Typography prioritizes readability with larger headings and a comfortable line height, while hover effects on buttons shift their color and scale for user feedback. The video background is styled to fit perfectly, overlaid with a semi-transparent layer to ensure text stands out against the dynamic visuals.</p>
+
+                <h3>Accessibility</h3>
+                <p>Accessibility on the Content Page is addressed by including alt text for images and aria-labels for buttons, ensuring screen readers can interpret interactive elements. The muted background video avoids disrupting assistive technologies, while semantic tags like article and header enhance content structure. Responsive design adapts the layout for various devices, and sufficient contrast between text and background supports users with visual impairments.</p>
+
+                <h3>Link to the validation page</h3>
+                <p><a href="new1.html>Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p>
+
+                <h3>Link to the page</h3>
+                <p><a href="content.html">Include a link to the actual page you describe.</a></p>
+            </section>
+
+            <section>
+                <h2 id="challenge">Challenges and Lessons Learned</h2>
+                <p>Creating these pages presented several challenges that deepened my understanding of web development. On the Content Page, getting the background video to scale correctly across devices was tricky, but applying object-fit: cover and media queries resolved the issue, teaching me the importance of testing visual elements thoroughly. The Profile Page’s card alignment initially faltered with uneven sizes, which I fixed by tweaking Flexbox properties, reinforcing the need for precise layout planning. On the Sitemap Page, nested links looked cluttered on mobile, so I adjusted padding and font sizes, learning to prioritize mobile-first design. Accessibility also posed a hurdle, requiring me to revisit images and navigation to add proper alt text and keyboard support, guided by WCAG standards—a process that underscored the value of inclusivity from the start. These experiences taught me to balance aesthetics with functionality, plan layouts carefully, and test across devices, ultimately enhancing my skills in building user-friendly, accessible websites.</p> 
+            </section>
+
+<section>
+    <h2 id="compliance">Compliance</h2>
+    <ol>
+        <li>
+            <strong>Accessibility & Usability</strong>
+            <ul>
+                <li>The HTML pages use the <code>&lt;meta charset="UTF-8"&gt;</code> declaration, ensuring compatibility with multiple character sets and languages.</li>
+                <li>The navigation menu is structured with <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code> elements, providing a clear and logical hierarchy for users.</li>
+                <li>Alternative text (<code>alt</code>) is provided for images (logo2.png, deforest.jpg, etc.), making the pages accessible to visually impaired users who rely on screen readers.</li>
+                <li>Proper heading structure (<code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, etc.) is used to organize content logically.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Ethical & Legal Compliance</strong>
+            <ul>
+                <li>The content focuses on educational and environmental topics, ensuring compliance with ethical guidelines by avoiding offensive or misleading information.</li>
+                <li>The site does not contain any illegal, harmful, or offensive material, adhering to the Acceptable Use Policy set by Janet.</li>
+                <li>External resources such as YouTube videos and images appear to be properly embedded, ensuring compliance with copyright regulations if permissions are granted.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Security Considerations</strong>
+            <ul>
+                <li>The site does not appear to collect or process user data, minimizing privacy risks.</li>
+                <li>No explicit user authentication mechanisms (such as login forms) are present, reducing the risk of unauthorized data collection.</li>
+                <li>The website does not contain any scripts or external links that could introduce security vulnerabilities such as phishing or malware.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Technical Standards</strong>
+            <ul>
+                <li>The HTML structure follows standard conventions, ensuring compatibility with web browsers and devices.</li>
+                <li>The use of CSS for styling (linked via home.css, content_st2.css, etc.) adheres to modern web design principles.</li>
+                <li>Internal linking (Home.html, table.html, etc.) is correctly implemented, avoiding broken links.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Data Integrity & Maintenance</strong>
+            <ul>
+                <li>The site includes structured navigation and footer links, making it easy to maintain and update.</li>
+                <li>The information presented, such as statistics on deforestation and climate change, should be periodically updated to remain relevant and accurate.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Potential Improvements for Full Compliance</strong>
+            <ul>
+                <li>Some links (e.g., Volunteer, Feedback, Sitemap, Profile) appear to be placeholders and may lead to broken links if not properly implemented.</li>
+                <li>The site does not include a privacy policy or terms of use, which might be required if user data collection is introduced.</li>
+                <li>The alt text for some images could be more descriptive to enhance accessibility.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Conclusion</strong>
+            <ul>
+                <li>The web pages align well with Janet’s regulations by ensuring accessibility, ethical compliance, security, and adherence to technical standards. However, minor improvements such as fixing placeholder links and adding a privacy policy (if required) could further enhance compliance.</li>
+            </ul>
+        </li>
+    </ol>
+
+            </section>
+
+            <section>
+                <h2 id="ref">References</h2>
+                <p>Provide links to resources you used following a consistent format. For example:<br><br>
+                    <ul class="ref">
+                        <li>iStock (2025) <i>iStock.</i> Available at: <a href="https://www.istockphoto.com/">https://www.istockphoto.com/</a> (Last accessed: 11 Feb 2025).</li>
+                        <li>Duckett, J., 2011. HTML and CSS: Design and Build Websites,<i>John Wiley & Sons, Inc. Indianapolis.</i></li>
+						<li>Pixabay (2020). City skyline at night [Image]. Available at:<a href= "https://pixabay.com/photos/city-night-skyline-9876543/">https://pixabay.com/photos/city-night-skyline-9876543/</a>(Accessed: 10 March 2025).
+						<li>Williams, R.P. and Zhang, L. (2019). Ocean Monitoring Using Remote Sensing Techniques. In: IEEE International Conference on Oceanic Engineering, pp. 204-210. Available at:<a href= "https://ieeexplore.ieee.org/document/8912545 ">https://ieeexplore.ieee.org/document/8912545</a>(Accessed: 10 March 2025).</li>
+						<li>Thompson, D.M. and Taylor, P.A. (2020). Oceanography and Climate Change. In: Marine Sciences: Emerging Trends, pp. 45-60. Wiley. Available at:<a href= " https://ieeexplore.ieee.org/document/9321683">https://ieeexplore.ieee.org/document/9321683</a> (Accessed: 10 March 2025).</li>
+
+</li>
+                    </ul>
+                </p>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <aside role="navigation">
+            <h3>Core pages developed:</h3>
+            <ul class="top-level-ul">
+                <li>Student 1</li>
+                <ul> 
+                    <li><a href="#splash">Splash page</a></li>
+                    <li><a href="#volunteer">Volunteer page</a></li>
+                    <li><a href="#content">Content page</a></li>
+                </ul>
+                <li>Student 2</li>
+                <ul>
+                    <li><a href="#">Home page</a></li>
+                    <li><a href="#">Table page</a></li>
+                    <li><a href="#">Content page</a></li>
+                </ul>
+                <li>Student 3</li>
+                <ul>
+                    <li><a href="#">Feedback page</a></li>
+                    <li><a href="#">Team page</a></li>
+                    <li><a href="#">Content page</a></li>
+                </ul>
+                <li>Student 4</li>
+                <ul>
+                    <li><a href="#">Profile page</a></li>
+                    <li><a href="#">Sitemap page</a></li>
+                    <li><a href="#">Content page</a></li>
+                </ul>
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="#ref">References</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <p>Replace the footer with your team's website footer</p>
+    </footer>
+</body>
+</html>

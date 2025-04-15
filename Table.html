@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Information</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eef1f2;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .table-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 400px; /* Set a width for the table */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4a90e2;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f2f2f2; /* Change background on hover */
+        }
+        a {
+            color: #4a90e2; /* Link color */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Contact Method</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Email</td>
+                    <td>jill.anderson@example.com</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>+1 (123) 456-7890</td>
+                </tr>
+                <tr>
+                    <td>Office Address</td>
+                    <td>123 Main Street, Suite 400, New York, NY 10001</td>
+                </tr>
+                <tr>
+                    <td>LinkedIn</td>
+                    <td><a href="https://www.linkedin.com/in/jillanderson" target="_blank">linkedin.com/in/jillanderson</a></td>
+                </tr>
+                <tr>
+                    <td>Twitter</td>
+                    <td>@jillanderson</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

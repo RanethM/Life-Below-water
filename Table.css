@@ -1,0 +1,299 @@
+        /* Full-Screen Video Background */
+        #myVideo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* General body styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        /* Navbar Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 80px;
+            background: rgba(0, 0, 0, 0.75);
+            position: relative;
+            z-index: 1;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+            transition: .5s;
+        }
+
+        header:hover::after {
+            left: 100%;
+        }
+
+        .logo img {
+            width: 80px;
+        }
+
+        nav {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 51px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 750;
+            font-size: 24px;
+            padding: 10px 10px;
+        }
+
+        nav ul li a:hover {
+            color: cyan;
+            border-bottom: 2px solid cyan;
+            border-radius: 15px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 60%;
+            margin: 50px auto; /* Centers the table */
+            border-collapse: collapse;
+            background-color: rgba(0, 156, 255, 0.5);
+            color: white;
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        th {
+            color: white;
+        }
+
+        th:nth-child(1) { background-color: #ad04ff; }
+        th:nth-child(2) { background-color: #ee1838; }
+        th:nth-child(3) { background-color: #009cff; }
+        th:nth-child(4) { background-color: green; }
+
+        h2 {
+            margin-top: 100px;
+        }
+		
+        th, td {
+            padding: 15px;
+            border: 2px solid grey;
+            text-align: center;
+			font-weight: bold;
+			font-size: 20px;
+        }
+
+        th {
+            color: white;
+        }
+
+        h2 {
+            margin-top: 100px;
+        }
+
+        /* Green checkmarks */
+        .checkmark {
+            color: yellow;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        /* Red crosses */
+        .cross {
+            color: red;
+            font-size: 1.5em;
+            font-weight: bold;
+        }	
+		
+		.content{
+			z-index: 1; /* Makes sure the content stays above the video */
+			font-size:35px;
+			position: relative;
+			top: -50px;}
+			footer {
+			position: relative;
+			width: 100%;
+			height: 200px; /* Adjust height as needed */
+			overflow: hidden;
+			background: linear-gradient(to bottom, #f4f4f4, transparent);
+		}
+		footer {
+			position: relative;
+			width: 100%;
+			height: 400px; /* Adjust height as needed */
+			overflow: hidden;
+			margin-top: 100px; /* Push footer below content */
+			z-index: 2;
+		}
+
+footer video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(12px);  /* Apply blur effect to the video */
+    z-index: -1;
+}
+
+
+	.footer-content {
+        position: relative;
+		bottom: 50px;
+		left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        color: white;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        background: rgba(0, 0, 0,0); /* Semi-transparent background for readability */
+        padding: 30px ;
+		backdrop-filter: none; 
+    }
+
+    .footer-section {
+		font-family: 'Poppins';
+		font-style: normal;
+        margin: 10px;
+		font-weight: bold;
+		font-size: 25px;
+    }
+
+    .footer-section h3 {
+        margin-bottom: 10px;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-section ul li {
+        margin: 5px 0;
+    }
+
+    .footer-section ul li a {
+        color: white;
+        text-decoration: none;
+
+    }
+
+    .footer-section ul li a:hover {
+        text-decoration: underline;
+        color: cyan;
+        border-bottom: 2px solid cyan;
+        border-radius: 55px;
+        }
+		
+
+
+	.footer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 91, 255, 0.71); /* Semi-transparent blue */
+    z-index: -1;
+}
+.footer-section {
+    flex: 1;  /* Allow sections to take equal width */
+    min-width: 250px;  /* Ensure sections don't get too narrow on small screens */
+    margin-top: 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 5px;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+    color: cyan;
+}
+
+.footer-section:nth-child(3) h3 {
+    margin-left: -250px; /* Adjust this value to move the heading to the left */
+}
+
+.footer-section .elements a {
+    color: white;
+    text-decoration: none; /* Remove default underline */
+    font-size: 16px;
+}
+
+.footer-section .elements a:hover {
+    text-decoration: underline;
+    color: cyan;
+    border-bottom: 2px solid cyan;
+    border-radius: 55px;
+}
+
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.social-icons li {
+    display: inline;
+}
+
+.social-icons li a {
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.social-icons li a:hover {
+    color: cyan;
+}

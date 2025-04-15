@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor Student - Raneth Kavendra Mendis</title>
+    <link rel="stylesheet" href="pageEditor_validator.css"> <!-- External CSS link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	
+
+</head>
+<body>
+    
+    <!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
+    <video autoplay muted loop class="bg_video"> 
+        <source src="underwater2_video.mp4" type="video/mp4">
+    </video>
+    <!-- Navbar -->
+    <header>
+        <div class="logo">
+            <img src="fish.png" alt="Life Below Water Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="able.html">MEMBERSHIP</a></li>
+                <li><a href="feedback.html.html">FEEDBACK</a></li>
+                <li><a href="Profile.html">USER PROFILE</a></li>
+                <li><a href="Team.html">ABOUT US</a></li>
+                <li><a href="#">SITE MAP</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="stud">
+        <h2>Raneth Mendis, Student 1</h2>
+    </section>
+
+    <div class="container">
+        <!-- Main content area -->
+        <main>
+
+            <!-- Update those first three sections for the pages you were responsible to implement -->
+
+            <section>
+                <h2 id="splash">Splash Page</h2>
+                    <h3>Technical Description</h3>
+                    <p>
+                        <b>Implementation of a Splash Screen Using HTML and CSS</b><br><br>  
+                        For this project, I developed a splash screen that effectively introduces the theme of "Life Below Water." The primary objective was to create a visually engaging experience by using structured HTML elements and CSS animations. By incorporating a background video, animated logo elements, a loading effect, and a well-organized layout, I ensured that the splash screen captured user attention while maintaining clarity and usability.<br><br>  
+                    
+                        <b>1. Key HTML Tags for Structure</b><br><br>  
+                        The foundation of the splash screen is built using various HTML tags that structure the content logically and efficiently.<br><br>  
+                    
+                        <b>a. &lt;video&gt; for Background Animation</b><br>  
+                        To create an immersive experience, I included a background video that continuously loops behind the content. The &lt;video&gt; element was used for this, allowing the integration of a moving background while keeping it muted and autoplaying to avoid user disruption.<br><br>  
+                    
+                        <b>b. &lt;div&gt; Containers for Layout Organization</b><br>  
+                        Several &lt;div&gt; elements were used to structure different sections of the splash screen. These include:<br>  
+                        - A logo container, which holds individual parts of the animated logo.<br>  
+                        - A loader container, which houses the loading bar animation.<br>  
+                        - A background overlay, which helps enhance readability by adding a subtle dark layer over the background video.<br><br>  
+                    
+                        <b>c. &lt;h1&gt;, &lt;h2&gt;, and &lt;h3&gt; for Text Content</b><br>  
+                        To create a well-structured heading hierarchy:<br>  
+                        - &lt;h1&gt; was used for the main title, making it the most prominent text on the page.<br>  
+                        - &lt;h2&gt; was used for the mission statement, ensuring a slightly smaller but still highly visible text block.<br>  
+                        - &lt;h3&gt; was used for subtitles, such as the "Our Members" section.<br><br>  
+                    
+                        <b>d. &lt;ul&gt; and &lt;li&gt; for Member List</b><br>  
+                        To present the names of the team members in a structured way, I used an unordered list (&lt;ul&gt;) with list items (&lt;li&gt;). Instead of displaying them in a traditional vertical format, I styled them using CSS to appear in a horizontal layout.<br><br>  
+                    
+                        <b>2. Key CSS Properties for Styling and Animation</b><br><br>  
+                        The visual appeal of the splash screen was achieved through CSS properties that controlled layout, positioning, color schemes, and animations.<br><br>  
+                    
+                        <b>a. Background and Overlay Styling</b><br>  
+                        To ensure readability over the background video, I applied a semi-transparent overlay:<br>  
+                        - background-color: rgba(0, 0, 0, 0.3); – This adds a subtle dark tint without completely blocking the video.<br>  
+                        - position: absolute; top: 0; left: 0; width: 100%; height: 100%; – Ensures the overlay covers the entire screen.<br><br>  
+                    
+                        <b>b. Logo and Image Positioning</b><br>  
+                        The logo is broken into separate parts (body, tail, and waves), and each is positioned precisely using:<br>  
+                        - position: absolute; – Ensures elements can be freely positioned relative to their parent container.<br>  
+                        - left: 50%; transform: translate(-50%, -50%); – Centers the elements horizontally and vertically.<br><br>  
+                    
+                        <b>c. Text Formatting</b><br>  
+                        To maintain a clean and modern look:<br>  
+                        - Font styling: I used font-family: 'Oswald', sans-serif; to apply a professional, bold font.<br>  
+                        - Text alignment: text-align: center; ensures that headings and descriptions are centered properly.<br>  
+                        - Color contrast: color: #fff; makes the text stand out against the darker background.<br><br>  
+                    
+                        <b>d. Animations for Smooth Transitions</b><br>  
+                        To create engaging effects, I applied CSS keyframe animations, such as:<br>  
+                        - Fade-in and slide effects – Used for text and logo elements to make them appear smoothly:<br>  
+                            &nbsp;&nbsp;opacity: 0; transform: translateY(50px); at the start.<br>  
+                            &nbsp;&nbsp;opacity: 1; transform: translateY(0); at the end.<br>  
+                        - Loading bar animation – The loading bar gradually fills up:<br>  
+                            &nbsp;&nbsp;animation: l6 5s forwards; where @keyframes l6 increases the width over time.<br>  
+                        - Logo movement – Different parts of the logo enter from various directions:<br>  
+                            &nbsp;&nbsp;animation: slideFromLeft 0.5s ease-in-out 1s forwards; – Moves elements from the left.<br>  
+                            &nbsp;&nbsp;animation: slideFromTop 0.5s ease-in-out 0.3s forwards; – Moves elements from the top.<br><br>  
+                    
+                        <b>e. Responsive Design</b><br>  
+                        To ensure proper display on different screen sizes:<br>  
+                        - max-width: 100%; height: auto; – Ensures images and elements resize dynamically.<br>  
+                        - @media screen and (max-width: 768px) – Adjusts layout for smaller screens by modifying text sizes and element positions.<br><br>  
+                    </p>
+                    
+                    
+                    <h3>Accessibility</h3>
+                    <p>For accessibility in this splash screen, I ensured text readability by using high contrast between the text and background. I also utilized semantic HTML tags, like <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, and <code>&lt;ul&gt;</code>, to improve the page structure and make it easier for screen readers to interpret. Additionally, the background video was muted and set to autoplay to avoid unexpected sound, while the <code>&lt;video&gt;</code> tag ensures that it is still accessible to users who may prefer not to interact with media. I also made the layout responsive, adjusting elements to fit different screen sizes, improving usability for mobile users.</p>
+
+                    
+                    <h3>Link to the validation page</h3> 
+                        <p><a href="validation_ST0.html#splashVal">Click Here</a></p> 
+
+                    <h3>Link to the page</h3>
+                        <p><a href="splash.html">Splash Screen</a></p>
+            </section>
+
+            <section>
+                <h2 id="volunteer">Volunteer Page</h2>
+                    <h3>Technical Description</h3>
+
+                    <p>The HTML structure provides the foundation for the layout and content of the page. The page utilizes several key HTML elements that contribute to the organization and interactivity.</p>
+
+                    <p><strong>&lt;header&gt;:</strong> The &lt;header&gt; element is used to define the top section of the page, which typically contains the main title or navigation. It helps to provide context for users and search engines.</p>
+                    
+                    <p><strong>&lt;section&gt;:</strong> The &lt;section&gt; tag is used to group related content together. For example, the carousel, review containers, and other parts of the page are separated into sections for better organization and clarity.</p>
+                    
+                    <p><strong>&lt;ul&gt; and &lt;li&gt;:</strong> These elements are crucial for the layout of the carousel. An unordered list (&lt;ul&gt;) wraps the list items (&lt;li&gt;), each containing an image. This structure allows for easy horizontal scrolling via CSS and JavaScript.</p>
+                    
+                    <p><strong>&lt;div&gt;:</strong> The &lt;div&gt; tag is used extensively to create containers that group content and styling. For example, the .card class groups individual items such as images and text content. It helps in maintaining flexible layouts.</p>
+                    
+                    <p><strong>&lt;button&gt;:</strong> Buttons are defined using the &lt;button&gt; element, which makes them semantically correct for interactivity. The button elements are used to create clickable actions like “Learn More,” “View,” or “Apply.”</p>
+                    
+                    <p>CSS is used to control the appearance of the HTML structure, and various properties contribute to both the layout and visual design of the page.</p>
+                    
+                    <p><strong>Flexbox and Grid:</strong> Flexbox (&lt;display: flex&gt;) is used to arrange items in a row or column, providing flexibility for layouts. In the carousel, Flexbox is used to align the images horizontally within the container. Additionally, CSS Grid is used to arrange the cards in a responsive manner. This allows content to adapt based on screen size, ensuring a consistent layout across devices.</p>
+                    
+                    <p><strong>Positioning:</strong> The position property plays a significant role in layout and element placement. position: relative is used to define an element’s position relative to its normal position, while position: absolute is used to place elements relative to their nearest positioned ancestor. This is seen in elements like the review containers and buttons, where precise placement is required.</p>
+                    
+                    <p><strong>Animation:</strong> Keyframe animations (@keyframes) are used to create smooth transitions for certain elements on the page. For example, the carousel images slide from left to right, and the images grow in size with a scaling effect. Animations like slideFromLeft and grow contribute to the dynamic nature of the page, enhancing user engagement.</p>
+                    
+                    <p><strong>Typography:</strong> Typography properties, such as font-size, font-weight, and text-align, are used to control the appearance of text. These properties ensure that headings and body text are readable and visually distinct. Larger fonts are typically used for important headings, and the sans-serif font family is applied for a modern, clean appearance.</p>
+                    
+                    <p><strong>Background and Color:</strong> The background-color and background-image properties control the visual appearance of elements' backgrounds. For instance, the body has a background image of water (url(Images/water.png)) and a background color set to a light blue (#00ccff) to match the theme of the page. Colors are also used for buttons, text, and other elements to enhance visual hierarchy and interactivity.</p>
+                    
+                    <p><strong>Borders and Shadows:</strong> The border-radius property is used to give rounded corners to various elements, such as cards and buttons, creating a modern and friendly design. The box-shadow property is applied to elements like the review containers and cards to add depth and visual separation between components.</p>
+                    
+                    <p><strong>Hover Effects:</strong> CSS hover effects are applied to buttons and interactive elements. For instance, the .learn-more:hover and .view:hover classes change the background color and scale the button when hovered, providing immediate visual feedback to users and improving interactivity.</p>
+                    
+                    <p>The combination of these HTML tags and CSS properties creates a functional and aesthetically pleasing design that is both responsive and engaging for users. The layout is intuitive, and the styling choices enhance user experience by providing smooth animations, interactive buttons, and a visually appealing structure.</p>
+
+                    
+
+                    <h3>Accessibility</h3>
+                    <p>In this project, I addressed accessibility by focusing on the design elements that make the page more usable for everyone. I ensured that interactive elements like buttons and links are clearly defined, easy to focus on, and accessible via keyboard navigation. For instance, I used proper semantic HTML tags such as <code>&lt;button&gt;</code> for clickable actions, making them recognizable for assistive technologies. I also applied focus styles to interactive elements, allowing users to navigate seamlessly using keyboard or screen readers. Additionally, I ensured good contrast between text and background, helping users with visual impairments. The layout is also responsive, ensuring that the page adapts well to various devices, which is important for accessibility.</p>
+
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST0.html#volunteerVal">Click Here</a></p>
+
+                        
+                    <h3>Link to the page</h3>
+                        <p><a href="volunteer.html">Volunteer</a></p>
+            </section>
+
+            <section>
+                <h2 id="content">Content Page</h2>
+                    <h3>Technical Description</h3>
+                    <p><strong>HTML Structure</strong><br>
+                        I used the HTML structure to create the foundation for the layout and content of the page. Several key HTML elements were chosen to help organize and make the page interactive.<br><br>
+                        
+                        - <strong>&lt;header&gt;</strong>: I used the <code>&lt;header&gt;</code> element to define the top section of the page, which typically contains the main title or navigation. This helps provide context for users and search engines.<br><br>
+                        
+                        - <strong>&lt;section&gt;</strong>: The <code>&lt;section&gt;</code> tag was used to group related content together. For example, I used it to separate parts like the carousel, review containers, and other sections for better organization and clarity.<br><br>
+                        
+                        - <strong>&lt;ul&gt; and &lt;li&gt;</strong>: These elements are crucial for the carousel layout. I wrapped the list items (<code>&lt;li&gt;</code>) inside an unordered list (<code>&lt;ul&gt;</code>), and each item contains an image. This structure makes it easy to apply horizontal scrolling with CSS and JavaScript.<br><br>
+                        
+                        - <strong>&lt;div&gt;</strong>: The <code>&lt;div&gt;</code> tag was used extensively to group content and styling. For instance, I used the <code>.card</code> class to group images and text content, which helps in creating flexible layouts.<br><br>
+                        
+                        - <strong>&lt;button&gt;</strong>: I used the <code>&lt;button&gt;</code> element to define buttons for interactivity. These are used for actions like “Learn More,” “View,” or “Apply.”<br><br>
+                        
+                        <strong>CSS Styling Techniques</strong><br>
+                        I used CSS to control the appearance of the HTML structure. Various properties contribute to both the layout and visual design of the page.<br><br>
+                        
+                        - <strong>Flexbox and Grid</strong>: Flexbox (<code>display: flex</code>) was used to arrange items in a row or column, allowing flexibility in layouts. In the carousel, I used Flexbox to align images horizontally within the container. Additionally, I used CSS Grid to arrange cards responsively, adapting to different screen sizes.<br><br>
+                        
+                        - <strong>Positioning</strong>: The <code>position</code> property plays a significant role in element placement. For example, I used <code>position: relative</code> to position elements relative to their normal position, and <code>position: absolute</code> to place elements in relation to their nearest positioned ancestor. This was especially useful for buttons and review containers.<br><br>
+                        
+                        - <strong>Background Video</strong>: I included a background video to visually convey the message of plastic waste in the ocean. The <code>video</code> element with the <code>autoplay</code>, <code>muted</code>, and <code>loop</code> attributes ensures a continuous loop of the video without sound. The <code>object-fit: cover</code> property ensures the video covers the screen, providing a dynamic backdrop.<br><br>
+                        
+                        - <strong>Text Styling</strong>: I used typography properties such as <code>font-size</code>, <code>font-weight</code>, and <code>text-align</code> to make the headings and body text readable and visually distinct. Larger fonts were used for headings, and the sans-serif font family was applied for a clean, modern appearance.<br><br>
+                        
+                        - <strong>Background Color and Overlays</strong>: The <code>background-color</code> and <code>background-image</code> properties control the appearance of the background. The body has a light blue color and a water-themed background image, matching the page's message. I applied a dark overlay to the video to enhance text readability and make the content stand out.<br><br>
+                        
+                        - <strong>Hover Effects</strong>: I added CSS hover effects to interactive elements like buttons. For example, I applied the <code>.learn-more:hover</code> and <code>.view:hover</code> classes, changing the background color and scaling the buttons when hovered, providing visual feedback and improving interactivity.<br><br>
+                        
+                        - <strong>Animation</strong>: I used keyframe animations (<code>@keyframes</code>) to create smooth transitions for certain elements on the page. For instance, the carousel images slide from left to right, and I applied scaling effects to enhance user engagement.<br><br>
+                        
+                        By combining these HTML tags and CSS properties, I created a functional, interactive, and visually appealing design. The background video of plastic waste complements the messaging, while the layout and styling choices ensure a smooth user experience across devices.</p>
+
+                        
+
+                    <h3>Accessibility</h3>
+                        <p><strong>Accessibility</strong><br>
+                        I prioritized accessibility to ensure that all users, including those with disabilities, can interact with the page effectively. I implemented several techniques to improve accessibility.<br><br>
+
+                        - <strong>Alt Text for Images</strong>: I added descriptive alt text to all images. For instance, for the image of plastic waste in the ocean, I used <code>&lt;img src="Images/garbage.jpeg" alt="Garbage in the ocean"&gt;</code>. This allows screen readers to describe the images to users with visual impairments.<br><br>
+
+                        - <strong>Semantic HTML</strong>: I used semantic HTML tags such as <code>&lt;header&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;article&gt;</code> to give structure and meaning to the content. This helps screen readers and search engines understand the page layout and content, making it easier for users to navigate and access the information.<br><br>
+
+                        - <strong>Color Contrast</strong>: I ensured that the text color has sufficient contrast with the background for users with low vision or color blindness. For example, the white text on a dark background in the content sections helps improve readability.<br><br>
+
+                        - <strong>Keyboard Navigation</strong>: I made sure all interactive elements, such as buttons, can be accessed using the keyboard. This is important for users who cannot use a mouse. The <code>&lt;button&gt;</code> elements are fully navigable using the Tab key and include clear focus states for better navigation.<br><br>
+
+                        - <strong>Video Accessibility</strong>: For the background video, I set it to autoplay, muted, and looped to prevent unwanted sounds. Although the video is visually engaging, I ensured that it doesn’t distract or cause discomfort for users with hearing impairments.<br><br>
+
+                        Through these methods, I aimed to ensure the page is more accessible for a broader range of users, improving their experience while interacting with the content.</p>
+
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST0.html#contentVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                        
+                    <h3>Link to the page</h3>
+                        <p><a href="content_student1.html">Include a link to the actual page you describe.</a></p>
+            </section>
+
+            <section>
+                <h2 id="challenge"> Challenges and Lessons Learned</h2>
+                <p><strong>Challenges Encountered</strong><br>
+                    During the implementation of the three HTML pages, I faced several challenges that required problem-solving and a deeper understanding of both HTML and CSS. Some of the key challenges included:<br><br>
+                    
+                    - <strong>Video Background Issues</strong>: One of the primary challenges was ensuring that the background video worked seamlessly across different devices and screen sizes. At first, the video didn’t properly cover the full screen on all devices. I resolved this by using the CSS property <code>object-fit: cover;</code>, which ensures that the video covers the screen without distorting or leaving empty spaces, no matter the screen size.<br><br>
+                    
+                    - <strong>Responsive Design</strong>: Making sure the layout and elements adjusted correctly on all screen sizes was a challenge. Since the project used Flexbox and CSS Grid, ensuring that images, text, and sections resized correctly without breaking the design was tricky. I solved this by using relative units like percentages and viewport widths, as well as implementing media queries to fine-tune the layout for smaller screens. This allowed the design to remain functional and visually appealing across different devices.<br><br>
+                    
+                    - <strong>Overlapping Elements</strong>: In some areas, especially with the background video and content containers, elements were overlapping or being hidden behind each other. This happened because of the layering and positioning of different sections. I fixed this by carefully managing the <code>z-index</code> property and using <code>position: relative;</code> and <code>position: absolute;</code> to control the stacking order of elements.<br><br>
+                    
+                    - <strong>Text Visibility</strong>: Ensuring text readability over the background video was challenging, especially with the video’s dynamic nature. The text would sometimes be hard to read due to the movement and color shifts in the video. To resolve this, I applied a dark overlay using <code>background-color: rgba(0, 0, 0, 0.7);</code> on top of the video, which improved the contrast and made the text stand out without taking away from the video’s visual appeal.<br><br>
+                    
+                    - <strong>Improving Accessibility</strong>: Ensuring the page was accessible to users with disabilities was another challenge. I had to ensure that all images had alt text, that there was a clear color contrast between text and backgrounds, and that interactive elements could be easily navigated with a keyboard. I solved these issues by following best practices for semantic HTML and accessibility guidelines, making sure all elements were labeled and easily accessible to screen readers.<br><br>
+                    
+                    <strong>Lessons Learned</strong><br>
+                    From overcoming these challenges, I learned the importance of planning the layout and design structure before diving into implementation. I also learned how to be more mindful of accessibility and user experience, ensuring that the page is both functional and inclusive. Additionally, working with video backgrounds and responsive design taught me how to balance aesthetics with usability, ensuring that the final result is visually appealing but also usable on all devices. These challenges were valuable learning experiences that enhanced my understanding of web development, especially in terms of creating interactive and accessible websites.</p>
+                    
+                </section>
+
+            <section>
+                <h2 id="compliance"> Compliance</h2>
+                <p> <b>Compliance with Janet Regulations</b><br><br>
+        
+                    The web pages I created comply with Janet regulations by ensuring security, accessibility, and responsible network usage. Security measures include using HTTPS for encrypted data transmission and validating form inputs to prevent vulnerabilities.  <br>
+                    
+                    Accessibility is addressed through semantic HTML, proper labeling of form fields, keyboard navigation, and screen reader compatibility. Responsible network usage is maintained by optimizing media elements, such as the background video, and ensuring efficient script execution.  <br>
+                    
+                    Additionally, the form includes clear labeling and privacy considerations to align with data protection standards. All content is educational and non-commercial, adhering to Janet’s acceptable use policy.  <br>
+                    
+                    I have also implemented secure form handling to prevent unauthorized data access and used compressed media to minimize network load. The use of semantic HTML elements and ARIA attributes ensures that the pages remain accessible to all users, including those using assistive technologies.  <br>
+                    
+                    These steps guarantee that the web pages meet Janet’s guidelines while maintaining functionality, usability, and compliance.  
+                    </p>
+                    
+            </section>
+
+            <section>
+                <h2 id="ref">References</h2>
+                <p>Provide links to resources you used following a consistent format (e.g., APA, MLA, or a simplified style). For example:<br><br>
+                    <ul class="ref">
+                        <li>iStock (2025) <i>iStock.</i> Available at: <a href="#">https://www.istockphoto.com/</a> (Last accessed: 11 Feb 2025).</li>
+                        <li>Duckett, J., 2011. HTML and CSS: Design and Build Websites,<i>John Willey&Sons. Inc. Indianappolis.</i></li>
+                    </ul>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <!-- Sidebar area -->
+        <aside>
+            <h3>Core pages developed:</h3>
+
+        <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
+            <ul class="top-level-ul">
+                <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
+                <li>Student 1</li>
+                    <ul> 
+                        <li><a href="#splash">Splash page</a></li>
+                        <li><a href="#volunteer">Volunteer page</a></li>
+                        <li><a href="#content">Content page</a></li>
+                    </ul>
+                <li>Student 2</li>
+                    <ul>
+                        <li><a href="#">Home page </a></li>
+                        <li><a href="#">Table page</a></li>
+                        <li><a href="#">Content page</a></li>
+                    </ul>
+                <li>Student 3</li>
+                    <ul>
+                        <li><a href="#">Feedback page</a> </li>
+                        <li><a href="#">Team page</a></li>
+                        <li><a href="#">Content page</a></li>
+                    </ul>
+                <li>Student 4</li>
+                    <ul>
+                        <li><a href="#">Profile page </a></li>
+                        <li><a href="#">Sitemap page</a></li>
+                        <li><a href="#">Content page</a></li>
+                    </ul>
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="#ref">References</a></li>
+            </ul>
+        </aside>
+    </div>
+
+<footer>
+    <div class="footer-overlay"></div>
+    <video autoplay loop muted>
+        <source src="Shark.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+<div class="footer-content">
+<div class="footer-section">
+    <h3 class="H3">Contact Us</h3>
+    <div class="elements">
+        <a href="mailto:husniatham@gmail.com">Email: <br>husniatham@gmail.com</a>
+        <p>Phone: <br>  +94 71 439 8375</p>
+        <p>Address: Mount Lavinia</p>
+    </div>
+</div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="able.html">MEMBERSHIP</a></li>
+                <li><a href="feedback.html.html">FEEDBACK</a></li>
+                <li><a href="Profile.html">USER PROFILE</a></li>
+                <li><a href="Team.html">ABOUT US</a></li>
+                <li><a href="#">SITE MAP</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <ul class="social-icons">
+                <li><a href="https://www.facebook.com/profile.php?id=100074258534518" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://x.com/alwaysPasindu" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://github.com/Husni-01" target="_blank"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/husni-atham-22b80432a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSljn%2BDHPTFOr13rGdimLgA%3D%3D" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+		        <div class="footer-section">
+            <h3>Page Editors</h3>
+            <ul>
+                <li><a href="#">Student 1</a></li>
+                <li><a href="#">Student 2</a></li>
+                <li><a href="#">Student 3</a></li>
+                <li><a href="#">Student 4</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

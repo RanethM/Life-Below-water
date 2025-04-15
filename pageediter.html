@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor Student - Dhanula Rajakaruna</title>
+    <link rel="stylesheet" href="css/pageEditor_validator.css"> <!-- External CSS link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Existing CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('pageeditor.png'); /* Add your background image here */
+            background-size: cover; /* Ensures the image covers the entire body */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-position: center; /* Centers the image */
+            color: #333; /* Text color for readability */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row-reverse;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background for readability */
+            border-radius: 10px; /* Optional: add rounded corners to the container */
+        }
+        
+        main {
+            flex: 3;
+        }
+        
+        aside {
+            flex: 1;
+            background-color: rgba(244, 244, 244, 0.9); /* Make the aside slightly transparent */
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-right: 20px;
+        }
+        
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            background-color: rgba(250, 250, 250, 0.9); /* Make section backgrounds slightly transparent */
+        }
+        
+        header, footer {
+            text-align: center;
+            background-color: rgba(51, 51, 51, 0.9); /* Semi-transparent header/footer background */
+            color: white;
+            padding: 10px 0;
+        }
+
+        .ref li {
+            list-style: none;
+            padding-bottom: 9px;
+        }
+
+        aside a {
+            text-decoration: none;
+        }
+
+        aside li {
+            padding-bottom: 4px;
+        }
+
+        .stud {
+            text-align: center;
+            line-height: 0;
+            background-color: rgba(203, 204, 194, 0.8); /* Semi-transparent background */
+            color: white;
+            margin-top: 8px;
+        }
+
+        .top {
+            position: fixed;
+            bottom: 5%;
+            right: 5%;
+        }
+
+        .top a {
+            padding: 10px 20px; /* Adds padding for button-like feel */
+            background-color: #007bff; /* Button color */
+            color: white; /* Text color */
+            text-decoration: none; /* Removes underline */
+            border-radius: 20px; /* Rounds the corners */
+            font-size: 12px; /* Adjust font size */
+            font-weight: bold; /* Make the text stand out */
+        }
+
+        .top a:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+        }
+
+        img {
+            width: 90%;
+        }
+
+        /* New CSS for the header navigation bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(51, 51, 51, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #007bff;
+        }
+
+        /* Video background */
+        #myVideo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        /* Footer Styles */
+footer {
+    position: relative;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.9); /* Semi-transparent background */
+    color: white;
+    padding: 20px 0;
+    margin-top: 40px; /* Add space above the footer */
+    overflow: hidden; /* Ensure video doesn't overflow */
+}
+
+footer video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Place the video behind the content */
+}
+
+.footer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
+    z-index: 0;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 1; /* Ensure content is above the video and overlay */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #007bff; /* Highlight color on hover */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons li {
+    list-style: none;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #007bff; /* Highlight color on hover */
+}
+
+.elements {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.elements a, .elements p {
+    color: #fff;
+    text-decoration: none;
+    margin: 0;
+}
+
+.elements a:hover {
+    color: #007bff; /* Highlight color on hover */
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Full-Screen Video Background -->
+    <video autoplay muted loop id="myVideo">
+        <source src="Shark.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <!-- Navbar -->
+    <header>
+        <div class="logo">
+            <img src="fish.png" alt="Life Below Water Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="able.html">MEMBERSHIP</a></li>
+                <li><a href="feedback.html.html">FEEDBACK</a></li>
+                <li><a href="Profile.html">USER PROFILE</a></li>
+                <li><a href="Team.html">ABOUT US</a></li>
+                <li><a href="Sitemap.html">SITE MAP</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="stud">
+        <h2>Dhanula Rajakaruna, student 4</h2>
+    </section>
+
+    <div class="container">
+        <main>
+            <!-- Existing content sections -->
+            <section>
+                <h2 id="splash">Profile Page</h2>
+                <h3>Technical Description</h3>
+                <p>For the Profile Page, I designed a layout to showcase user information in an engaging and organized way using HTML and CSS. The top section of the page is defined by a header element that includes the page title, such as "User Profiles," along with a navigation bar for seamless access to other parts of the site. Each user’s details—like their name, bio, and photo—are grouped within section elements styled as profile cards, which are built using div containers to encapsulate images, text, and interactive buttons like "View Profile." Images are integrated with proper alt attributes to describe them, ensuring accessibility, while buttons provide semantic interactivity for actions like connecting with users. CSS enhances this structure with a flexible, responsive design achieved through Flexbox, allowing the profile cards to align in a row and wrap neatly on smaller screens. Positioning techniques place subtle overlays on images when hovered over, and typography is styled with a modern font like Roboto to emphasize names and maintain readability. Hover effects scale the cards slightly and add shadows for interactivity, while a light background with contrasting card colors ensures a clean, readable aesthetic.</p>
+                
+                <h3>Accessibility</h3>
+                <p>Accessibility is a priority on the Profile Page, achieved through thoughtful design choices. Descriptive alt text accompanies all images, making them interpretable by screen readers, while semantic HTML elements like header and section improve navigation for assistive technologies. Text contrasts sharply with the background for readability, and buttons are styled with clear focus indicators, ensuring they’re navigable via keyboard. These steps create an inclusive experience for all users, regardless of ability.</p>
+                
+                <h3>Link to the validation page</h3>
+                <p><a href="validation_ST0.html#splashVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p>
+
+                <h3>Link to the page</h3>
+                <p><a href="splash.html">Include a link to the actual page you describe.</a></p>
+            </section>
+
+            <!-- Other sections remain unchanged -->
+        </main>
+
+        <aside role="navigation">
+            <h3>Core pages developed:</h3>
+            <ul class="top-level-ul">
+                <li>Student 1</li>
+                <ul> 
+                    <li><a href="#splash">Splash page</a></li>
+                    <li><a href="#volunteer">Volunteer page</a></li>
+                    <li><a href="#content">Content page</a></li>
+                </ul>
+                <li>Student 2</li>
+                <ul>
+                    <li><a href="#">Home page</a></li>
+                    <li><a href="#">Table page</a></li>
+                    <li><a href="#">Content page</a></li>
+                </ul>
+                <li>Student 3</li>
+                <ul>
+                    <li><a href="#">Feedback page</a></li>
+                    <li><a href="#">Team page</a></li>
+                    <li><a href="#">Content page</a></li>
+                </ul>
+                <li>Student 4</li>
+                <ul>
+                    <li><a href="#">Profile page</a></li>
+                    <li><a href="#">Sitemap page</a></li>
+                    <li><a href="#">Content page</a></li>
+                </ul>
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="#ref">References</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-overlay"></div>
+        <video autoplay loop muted>
+            <source src="Shark.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="H3">Contact Us</h3>
+                <div class="elements">
+                    <a href="mailto:husniatham@gmail.com">Email: <br>husniatham@gmail.com</a>
+                    <p>Phone: <br>  +94 71 439 8375</p>
+                    <p>Address: Mount Lavinia</p>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Membership</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com/profile.php?id=100074258534518" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://x.com/alwaysPasindu" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://github.com/Husni-01" target="_blank"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/pasindu-dilshan-929865269/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Page Editors</h3>
+                <ul>
+                    <li><a href="#">Student 1</a></li>
+                    <li><a href="#">Student 2</a></li>
+                    <li><a href="#">Student 3</a></li>
+                    <li><a href="#">Student 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
