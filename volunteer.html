@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="volunteer.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash Screen </title>
+</head>
+<body>
+  
+  <h1 class="heading">Volunteer Programs</h1>
+
+    <div class="autoslide">
+      <ul>
+        <li>
+          <div class="image-container">
+            <img src="Images/turtle-conservation.jpg">
+          </div>
+      
+          <div class="caption-container">
+            <div class="caption">
+              <h1>Sea Turtle Conservation</h1>
+              <p>Assist in protecting endangered sea turtles by monitoring nesting sites,<br>
+                relocating eggs to safe hatcheries, and educating local communities<br>
+                  about conservation.</p>
+              <button class="learn-more" href="#turtles">Learn More</button>
+            </div>
+          </div>
+        </li>
+
+
+
+        <li>
+          <div class="image-container">
+            <img src="Images/ocg-saving-the-ocean-SIg-qmg9NHw-unsplash.jpg">
+          </div>
+      
+          <div class="caption-container">
+            <div class="caption">
+              <h1>Ocean Cleanup Crew</h1>
+              <p>oin hands with environmental groups to remove plastic waste from <br>
+                beaches, rivers, and ocean shorelines. Your efforts help protect marine <br> 
+                 life from harmful debris.</p>
+              <button class="learn-more">Learn More</button>
+            </div>
+          </div>
+        
+      
+        </li>
+
+
+        
+        <li>
+          <div class="image-container">
+            <img src="Images/ethical-fishing.webp">
+          </div>
+      
+          <div class="caption-container">
+            <div class="caption">
+              <h1>Sustainable Fishing & Marine Education</h1>
+              <p>Work with local fishermen to promote sustainable fishing practices,<br>
+                reduce overfishing, and educate communities on protecting marine ecosystems.</p>
+              <button class="learn-more">Learn More</button>
+            </div>
+          </div>
+        
+      
+        </li>
+        
+
+        
+        <li>
+          <div class="image-container">
+            <img src="Images/coral-reef-restoration.jpg">
+          </div>
+      
+          <div class="caption-container">
+            <div class="caption">
+              <h1>Coral Reef Restorationn</h1>
+              <p>Volunteer as a diver or researcher to help restore damaged coral reefs. <br>
+                Activities include coral planting, reef monitoring, and marine biodiversity conservation.</p>
+              <button class="learn-more">Learn More</button>
+            </div>
+          </div>
+        
+      
+        </li>
+      </ul>
+    </div>
+  
+
+
+
+  <h1 class="all">All programs</h1>
+
+  <label class="dropdown-label" for="dropdown">Filter:</label>
+  <select class="dropdown" name="dropdown">
+      <option value="option1">MOST POPULAR</option>
+      <option value="option2">RECCOMENDED</option>
+      <option value="option3">LEAST POPULAR</option>
+  </select>
+  
+
+
+  <div class="card-container"></div>
+  
+    <div class="card" id="coral-reefs">
+      <img src="Images/coral-reef-restoration.jpg" alt="saving coral reefs">
+      <div class="content">
+        <h2>Maldives</h2>
+        <p>Coral Reef Restoration in Malé </p>
+        <div class="info">
+          <div>
+          <img src="Images/seaweed.png" alt="icon">
+          <p>Restores marine ecosystems</p>
+          </div>
+
+          <div>
+            <img src="Images/hours.png" alt="icon">
+            <p>4-6 hours volunteering per day</p>
+          </div>
+          
+          <div>
+              <img src="Images/fees.png" alt="icon">
+              <p>Program Fees from £350</p>
+          </div>
+        </div>
+
+        <div class="details">
+          <p>📅 Durations: 2 - 8 weeks</p>
+          <p>👥 Eligibility: Volunteers aged 18+ (diving certification recommended)</p>
+          <p>🔹 Example Stay: 2 weeks - £500 (£36/day)</p>
+        </div>
+        <div class="bibilo">
+          <p>This program allows volunteers to actively restore damaged coral reefs through coral planting, reef monitoring, and underwater conservation efforts. Certified divers can help transplant coral fragments to regenerate marine ecosystems.</p>
+        </div>
+        <div class="action-buttons">
+          <button class="view" onclick="location.href='#'">VIEW PROJECT</button>
+          <button class="apply" onclick="loaction.href='#'">APPLY</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="card" id="ethical-fishing">
+      <img src="Images/ethical-fishing-1.jpg" alt="Ethical fishing">
+      <div class="content">
+        <h2>Indonesia</h2>
+        <p>Sustainable Fishing & Marine Education in Bali</p>
+        <div class="info">
+          <div>
+          <img src="Images/fishing.png" alt="icon">
+          <p>Supports sustainability</p>
+          </div>
+
+          <div>
+            <img src="Images/hours.png" alt="icon">
+            <p>3-5 hours volunteering per day</p>
+          </div>
+          
+          <div>
+              <img src="Images/fees.png" alt="icon">
+              <p>Program Fees from £300</p>
+          </div>
+        </div>
+
+        <div class="details">
+          <p>📅  Durations: 2 - 10 weeks</p>
+          <p>👥 Eligibility: Volunteers aged 18+</p>
+          <p>🔹 Example Stay: 2 weeks - £420 (£30/day)</p>
+        </div>
+        <div class="bibilo">
+          <p>This program supports local fishing communities in adopting sustainable practices, preventing overfishing, and educating people on marine ecosystem conservation. Volunteers engage in hands-on projects and community outreach programs.</p>
+        </div>
+        <div class="action-buttons">
+          <button class="view" onclick="location.href='#'">VIEW PROJECT</button>
+          <button class="apply" onclick="loaction.href='#'">APPLY</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card" id="turtles">
+      <img src="Images/turtle-conservation.jpg" alt="turtle conservation">
+      <div class="content">
+        <h2>Costa Rica</h2>
+        <p>Sea Turtle Conservation in Tortuguero</p>
+        <div class="info">
+          <div>
+          <img src="Images/turtle.png" alt="icon">
+          <p>Protects animals</p>
+          </div>
+
+          <div>
+            <img src="Images/hours.png" alt="icon">
+            <p>3-6 hours volunteering per day</p>
+          </div>
+          
+          <div>
+              <img src="Images/fees.png" alt="icon">
+              <p>Program Fees from £320</p>
+          </div>
+        </div>
+
+        <div class="details">
+          <p>📅 Durations: 1 - 16 weeks</p>
+          <p>👥 Eligibility: Volunteers aged 16+ and families</p>
+          <p>🔹 Example Stay: 2 weeks - £450 (£32/day)</p>
+        </div>
+        <div class="bibilo">
+          <p>This program focuses on sea turtle conservation efforts, including monitoring nesting sites, relocating eggs to safer hatcheries, and educating local communities on reducing threats to turtle populations.</p>
+        </div>
+        <div class="action-buttons">
+          <button class="view" onclick="location.href='#'">VIEW PROJECT</button>
+          <button class="apply" onclick="loaction.href='#'">APPLY</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card" id="ocean">
+      <img src="Images/ocg-saving-the-ocean-SIg-qmg9NHw-unsplash.jpg" alt="beach cleaning ">
+      <div class="content">
+        <h2>Maldives</h2>
+        <p>Ocean Cleanup Crew in Phuket </p>
+        <div class="info">
+          <div>
+          <img src="Images/wave.png" alt="icon">
+          <p>Protects marine environments</p>
+          </div>
+
+          <div>
+            <img src="Images/hours.png" alt="icon">
+            <p>3-5 hours volunteering per day</p>
+          </div>
+          
+          <div>
+              <img src="Images/fees.png" alt="icon">
+              <p>Program Fees from £280</p>
+          </div>
+        </div>
+
+        <div class="details">
+          <p>📅 Durations: 1 - 12 weeks</p>
+          <p>👥 Eligibility: Volunteers aged 16+ and families</p>
+          <p>🔹 Example Stay: 2 weeks - £400 (£29/day)</p>
+        </div>
+        <div class="bibilo">
+          <p>This volunteer program focuses on removing plastic waste from beaches and waterways, preventing harm to marine life and promoting ocean conservation efforts. Volunteers participate in cleanups and awareness campaigns to protect aquatic ecosystems.          </p>
+        </div>
+        <div class="action-buttons">
+          <button class="view" onclick="location.href='#'">VIEW PROJECT</button>
+          <button class="apply" onclick="loaction.href='#'">APPLY</button>
+        </div>
+      </div>
+    </div>
+
+  
+
+  <div class="review-container">
+    <h1 class="Rating">9.8/10</h1>
+    <h2>Exceptional</h2>
+    <p>100 reviews ⓘ</p>
+    <h4> Recent Reviews</h4>
+
+ 
+    <div class="review-card1">
+        <h3>10/10 Great!</h3>
+        <p>This was one of the best volunteer experiences I've ever had! The hands-on approach to protecting marine life was inspiring, and I ...<br><br> <a class="see" href="#">See more</a> </p> 
+        <span class="review-meta"> <b>Johnathan B.</b> <p>January 30, 2025</p></span>
+    </div>
+    
+    <div class="review-card2">
+      <h3>10/10 Excellent!</h3>
+      <p>I had an amazing time learning about ocean conservation while working alongside dedicated volunteers. The activities were well-organized... <br><br><a clas="see" href="#">See more</a></p>
+      <span class="review-meta"> <b>Daniela G.</b> <p>Ferbruary 12, 2025</p></span>
+  </div>
+  </div>
+
+  <div class="container">
+    <h2>Send us your review</h2>
+    <div id="button-container">
+        <button class="reaction">😞</button>
+        <button class="reaction">😐</button>
+        <button class="reaction">😊</button>
+        <button class="reaction">😁</button>
+    </div>
+
+
+    <form class="feedback"  action="#" method="post">
+    
+        <p class="suggestions-text">Got suggestions? We'd love to hear them!</p>
+        <textarea name="feedback" placeholder="Enter your feedback here..."></textarea>
+        <div class="action">
+            <button type="submit" class="btn btn-send">Send Feedback</button>
+            <button type="reset" class="btn btn-cancel">Cancel</button>
+        </div>
+    </form>
+    <div class="links">
+        <a href="#">Privacy Policy</a> | <a href="#">Help Center</a>
+    </div>
+</div>
+
+<video autoplay muted loop class="bg_video"> 
+  <source src="Images/background.mp4" type="video/mp4">
+</video>
+<div class="bg_overlay"></div>
+
+  
+
+</body>
+</html>
